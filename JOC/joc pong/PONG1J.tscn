@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://joc pong/PONG.tscn" type="PackedScene" id=2]
+[ext_resource path="res://joc pong/IA.tscn" type="PackedScene" id=3]
+[ext_resource path="res://joc pong/JUGADOR1.tscn" type="PackedScene" id=4]
+
+
+
+
+[node name="PONG1J" type="Node2D"]
+
+[node name="CAMP " parent="." instance=ExtResource( 2 )]
+
+[node name="JUGADOR1" parent="." instance=ExtResource( 4 )]
+
+[node name="IA" parent="." instance=ExtResource( 3 )]

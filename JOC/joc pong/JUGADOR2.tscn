@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://joc pong/JUGADOR2.gd" type="Script" id=1]
+
+[sub_resource type="SegmentShape2D" id=1]
+a = Vector2( 0, 64 )
+b = Vector2( 0, -96 )
+
+[node name="JUGADOR2" type="KinematicBody2D"]
+position = Vector2( 960, 112 )
+scale = Vector2( 1.7, 0.8 )
+collision_mask = 3
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+polygon = PoolVector2Array( 8, 96, 16, 96, 24, 96, 24, 256, 8, 256 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( 16, 192 )
+scale = Vector2( 5.3, 1 )
+shape = SubResource( 1 )

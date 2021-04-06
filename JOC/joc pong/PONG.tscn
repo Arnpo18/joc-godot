@@ -1,0 +1,85 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://joc pong/PONG.gd" type="Script" id=1]
+[ext_resource path="res://joc pong/BOLA.tscn" type="PackedScene" id=2]
+[ext_resource path="res://joc pong/HUD/BAUHS93.TTF" type="DynamicFontData" id=3]
+
+
+
+
+[sub_resource type="DynamicFont" id=1]
+size = 22
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 22
+font_data = ExtResource( 3 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 552, 10 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 10, 304 )
+
+[node name="CAMP " type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="PUNTUACIOJ1" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 380.0
+margin_top = 250.0
+margin_right = 436.0
+margin_bottom = 223.0
+custom_fonts/font = SubResource( 1 )
+text = "aaa"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PUNTUACIOJ2" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 620.0
+margin_top = 250.0
+custom_fonts/font = SubResource( 2 )
+text = "aaa"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sostre i terra" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sostre i terra"]
+position = Vector2( 504, -8 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="sostre i terra"]
+position = Vector2( 520, 608 )
+shape = SubResource( 3 )
+
+[node name="porteria j1" type="Area2D" parent="."]
+position = Vector2( -16, -8 )
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="porteria j1"]
+position = Vector2( -16, 312 )
+shape = SubResource( 4 )
+
+[node name="porteria j2" type="Area2D" parent="."]
+position = Vector2( -16, -16 )
+collision_mask = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="porteria j2"]
+position = Vector2( 1040, 304 )
+shape = SubResource( 4 )
+
+[node name="BOLA" parent="." instance=ExtResource( 2 )]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.25
+one_shot = true
+[connection signal="body_entered" from="porteria j1" to="." method="_on_porteria_j1_body_entered"]
+[connection signal="body_entered" from="porteria j2" to="." method="_on_porteria_j2_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
