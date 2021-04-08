@@ -8,9 +8,9 @@ func _ready():
 func _physics_process(delta):
 	moviment.y=0
 	position.x=0
-	if Input.is_action_pressed("amunt"):
+	if Input.is_action_pressed("amunt_pong"):
 		moviment.y=-velocitat
-	if Input.is_action_pressed("avall"):
+	if Input.is_action_pressed("avall_pong"):
 		moviment.y=velocitat
 	moviment=move_and_slide(moviment)
 # Called every frame. 'delta' is the elapsed time since the previous frame.

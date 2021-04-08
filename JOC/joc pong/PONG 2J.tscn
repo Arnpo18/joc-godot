@@ -6,8 +6,8 @@
 
 [node name="PONG 1J" type="Node2D"]
 
+[node name="CAMP " parent="." instance=ExtResource( 1 )]
+
 [node name="JUGADOR1" parent="." instance=ExtResource( 3 )]
 
 [node name="JUGADOR2" parent="." instance=ExtResource( 4 )]
-
-[node name="CAMP " parent="." instance=ExtResource( 1 )]

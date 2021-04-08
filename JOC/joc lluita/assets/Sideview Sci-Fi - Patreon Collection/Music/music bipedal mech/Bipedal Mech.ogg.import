@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Bipedal Mech.ogg-2b502940f0eaf7eb3390b7d3e432e8bd.oggstr"
+
+[deps]
+
+source_file="res://joc lluita/assets/Sideview Sci-Fi - Patreon Collection/Music/music bipedal mech/Bipedal Mech.ogg"
+dest_files=[ "res://.import/Bipedal Mech.ogg-2b502940f0eaf7eb3390b7d3e432e8bd.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
