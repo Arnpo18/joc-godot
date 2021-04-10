@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var velocitat = 430
+var velocitat = 500
 var moviment = Vector2.ZERO
 
 func _ready():

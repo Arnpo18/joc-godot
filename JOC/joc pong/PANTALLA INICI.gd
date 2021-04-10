@@ -3,6 +3,8 @@ extends Node2D
 func _ready():
 	$MarginContainer/VBoxContainer/TextureButton.grab_focus()
 
+	OS.set_window_size(Vector2(1024, 600))
+
 func _physics_process(delta):
 	if $MarginContainer/VBoxContainer/TextureButton.is_hovered() == true:
 		$MarginContainer/VBoxContainer/TextureButton.grab_focus()
@@ -17,7 +19,7 @@ func _on_TextureButton_pressed():
 
 
 func _on_TextureButton2_pressed():
-	get_tree().change_scene("res://joc pong/PONG 2J.tscn")
+	get_tree().change_scene("res://joc pong/PONG2J.tscn")
 
 
 func _on_TextureButton3_pressed():

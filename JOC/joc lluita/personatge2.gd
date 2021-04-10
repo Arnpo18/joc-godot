@@ -1,52 +1,78 @@
 extends KinematicBody2D
-const gravetat = 50
+const gravetat = 670
 var moviment=Vector2()
-var velocitat=350
+var velocitat=300
 var atacant=false
-var xy
-var vida=100
-var a
-var r
-var tru =false
+var velocitat2 = 100
+var vida=400
+var vides=3
+var mort=false
+func x():
+	pass
 func _ready():
-	xy=get_parent().find_node('personatge1')
-	
+	pass 
 func _physics_process(delta):
-	if tru==false:
-		$random.start()
-		tru=true
-		if r==1:
-			atac()
-		else: defensa()
-	moviment.y+=gravetat
+	moviment.y+=gravetat*delta
+	moviment.x=0
+	if vida <=0:
+		mort=true
+	if mort==false:
+		if atacant==true:
+			if Input.is_action_pressed('dreta_lluita2'):
+				moviment.x=velocitat2
+			if Input.is_action_pressed('esquerra_lluita2'):
+				moviment.x=-velocitat2
+		if atacant==false:
+									### moviment ###
+			if Input.is_action_pressed('dreta_lluita2'):
+				moviment.x=velocitat
+			if Input.is_action_pressed('esquerra_lluita2'):
+				moviment.x=-velocitat
+			if moviment.x > 0:
+				$AnimatedSprite.play('camina')
+				$AnimatedSprite.flip_h=false
+				$hitbox_dreta/CollisionShape2D.set_deferred('disabled',false)
+				$hitbox_esquerra/CollisionShape2D2.set_deferred('disabled',true)
+			if moviment.x <0:
+				$AnimatedSprite.play('camina')
+				$AnimatedSprite.flip_h=true
+				$hitbox_dreta/CollisionShape2D.set_deferred('disabled',true)
+				$hitbox_esquerra/CollisionShape2D2.set_deferred('disabled',false)
+			if Input.is_action_just_pressed("salta_lluita2") && is_on_floor():
+				moviment.y=-340
+			if is_on_floor()==false && moviment.y <0:
+				$AnimatedSprite.play('salt')
+			if is_on_floor()==false && moviment.y >0:
+				$AnimatedSprite.play('cau')
+			if moviment.x==0 && is_on_floor():
+				$AnimatedSprite.play('quiet')
 
-	
-func atac():
-	if abs(xy.position.x - position.x) > 0:
-		if xy.position.x > position.x: a= 1
-		else: a=-1 
-	if a == 1:
-		moviment=move_and_slide(Vector2(velocitat,moviment.y))
-	else:
-		moviment=move_and_slide(Vector2(-velocitat,moviment.y))
-func defensa():
-	if abs(xy.position.x - position.x) > 0:
-		if xy.position.x > position.x: a=1
-		else: a=-1
-	if a==1:
-		var yy=-1000
-		moviment=move_and_slide(Vector2(-velocitat,yy))
-		$Timer.start()
-	if a==-1:
-		var yy=-1000
-		moviment=move_and_slide(Vector2(velocitat,yy))
-		$Timer.start()
-		
-func _on_Timer_timeout():
-	var yy=0 
+										### atac ###
+			if Input.is_action_just_pressed('atac1_lluita2'):
+				$AnimatedSprite.play('atac')
+				atacant=true
+				$cooldown.start()
+			if Input.is_action_just_pressed('atac2_lluita2'):
+				$AnimatedSprite.play('atac')
+				atacant=true
+				$cooldown.start()
+		elif mort==true:
+			mort()
+	moviment=move_and_slide(moviment,Vector2.UP)
 
+func _on_cooldown_timeout():
+	atacant=false
+func _on_hitbox_dreta_body_entered(body):
+	if body.has_method('x') && atacant==true:
+		body.vida-=50
+func _on_hitbox_esquerra_body_entered(body):
+	if body.has_method('x') && atacant==true:
+		body.vida-=50
+func mort():
+	$AnimatedSprite.play('mort')
+	$mort.start()
+	vides-=1
+	vida=400
 
-func _on_random_timeout():
-	randomize()
-	r= [-1,1][randi() % 1]
-	tru=false
+func _on_mort_timeout():
+	pass # Replace with function body.
