@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://joc lluita/mapa.tscn" type="PackedScene" id=1]
 [ext_resource path="res://joc lluita/personatge1.tscn" type="PackedScene" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://joc lluita/mapa assets/par3_tileable_640x360px.png" type="Texture" id=7]
 [ext_resource path="res://joc lluita/mapa assets/cloudySky_640x360px.png" type="Texture" id=8]
 [ext_resource path="res://joc lluita/escena.gd" type="Script" id=9]
+[ext_resource path="res://joc lluita/Hero Knight/vida.png" type="Texture" id=10]
+[ext_resource path="res://joc lluita/Hero Knight 2/vida.png" type="Texture" id=11]
 
 [node name="escena" type="Node"]
 script = ExtResource( 9 )
@@ -69,6 +71,8 @@ region_rect = Rect2( 0, 280, 4250, 80 )
 
 [node name="StaticBody2D" parent="." instance=ExtResource( 1 )]
 position = Vector2( -128, 8 )
+collision_layer = 4
+collision_mask = 3
 
 [node name="Camera2D" parent="." instance=ExtResource( 4 )]
 
@@ -78,3 +82,43 @@ position = Vector2( 320, 456 )
 [node name="personatge2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1208, 464 )
 scale = Vector2( 1.2, 1.2 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="."]
+one_shot = true
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+
+[node name="vida_j1_1" type="Sprite" parent="ParallaxBackground2"]
+position = Vector2( 24, 32 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 10 )
+
+[node name="vida_j1_3" type="Sprite" parent="ParallaxBackground2"]
+position = Vector2( 72, 32 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 10 )
+
+[node name="vida_j1_2" type="Sprite" parent="ParallaxBackground2"]
+position = Vector2( 120, 32 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 10 )
+
+[node name="vida_j2_1" type="Sprite" parent="ParallaxBackground2"]
+position = Vector2( 1888, 32 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 11 )
+
+[node name="vida_j2_2" type="Sprite" parent="ParallaxBackground2"]
+position = Vector2( 1848, 32 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 11 )
+
+[node name="vida_j2_3" type="Sprite" parent="ParallaxBackground2"]
+position = Vector2( 1808, 32 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 11 )
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
