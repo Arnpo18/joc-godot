@@ -7,6 +7,7 @@ var velocitat2 = 100
 var vida=400
 var vides=3
 var mort=false
+var atac=true
 func x():
 	pass
 func _ready():
@@ -14,8 +15,7 @@ func _ready():
 func _physics_process(delta):
 	moviment.y+=gravetat*delta
 	moviment.x=0
-	if vida <=0:
-		mort=true
+	print(vida)
 	if mort==false:
 		if atacant==true:
 			if Input.is_action_pressed('dreta_lluita2'):
@@ -63,16 +63,19 @@ func _physics_process(delta):
 func _on_cooldown_timeout():
 	atacant=false
 func _on_hitbox_dreta_body_entered(body):
-	if body.has_method('x') && atacant==true:
+	if atacant==true && atac==true:
 		body.vida-=50
+		atac=false
+		$cooldown2.start()
 func _on_hitbox_esquerra_body_entered(body):
-	if body.has_method('x') && atacant==true:
+	if atacant==true && atac==true:
 		body.vida-=50
+		atac=false
+		$cooldown2.start()
 func mort():
 	$AnimatedSprite.play('mort')
 	$mort.start()
 	vides-=1
 	vida=400
-
-func _on_mort_timeout():
-	pass # Replace with function body.
+func _on_cooldown2_timeout():
+	atac=true # Replace with function body.

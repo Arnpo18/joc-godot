@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://joc lluita/Camera2D.gd" type="Script" id=3]
+
+[node name="Camera2D" type="Camera2D"]
+current = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_speed = 6.0
+offset_v = -1.0
+script = ExtResource( 3 )

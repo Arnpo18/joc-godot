@@ -3,43 +3,20 @@
 [ext_resource path="res://joc lluita/mapa.tscn" type="PackedScene" id=1]
 [ext_resource path="res://joc lluita/personatge1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://joc lluita/personatge2.tscn" type="PackedScene" id=3]
-[ext_resource path="res://joc lluita/escena.gd" type="Script" id=4]
+[ext_resource path="res://Camera2D.tscn" type="PackedScene" id=4]
 [ext_resource path="res://joc lluita/mapa assets/par1_tileable_640x360px.png" type="Texture" id=5]
 [ext_resource path="res://joc lluita/mapa assets/par2_tileable_640x360px.png" type="Texture" id=6]
 [ext_resource path="res://joc lluita/mapa assets/par3_tileable_640x360px.png" type="Texture" id=7]
 [ext_resource path="res://joc lluita/mapa assets/cloudySky_640x360px.png" type="Texture" id=8]
+[ext_resource path="res://joc lluita/escena.gd" type="Script" id=9]
 
-[sub_resource type="CircleShape2D" id=1]
-
-[node name="escena" type="Node2D"]
-script = ExtResource( 4 )
-
-[node name="StaticBody2D" parent="." instance=ExtResource( 1 )]
-
-[node name="personatge1" parent="." instance=ExtResource( 2 )]
-position = Vector2( 409.381, 460.336 )
-
-[node name="personatge2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1334.9, 473.857 )
-
-[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
-collision_layer = 4
-collision_mask = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
-position = Vector2( 801.859, 363.453 )
-shape = SubResource( 1 )
-
-[node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
-rotating = true
-current = true
-smoothing_enabled = true
-smoothing_speed = 6.0
-offset_v = -1.0
+[node name="escena" type="Node"]
+script = ExtResource( 9 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-offset = Vector2( 0, -600 )
-transform = Transform2D( 1, 0, 0, 1, 0, -600 )
+offset = Vector2( 0, -685 )
+scale = Vector2( 1.2, 1.2 )
+transform = Transform2D( 1.2, 0, 0, 1.2, 0, -685 )
 scroll_base_scale = Vector2( 1, 0 )
 scroll_ignore_camera_zoom = true
 
@@ -89,3 +66,15 @@ scale = Vector2( 1, 11 )
 texture = ExtResource( 7 )
 region_enabled = true
 region_rect = Rect2( 0, 280, 4250, 80 )
+
+[node name="StaticBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( -128, 8 )
+
+[node name="Camera2D" parent="." instance=ExtResource( 4 )]
+
+[node name="personatge1" parent="." instance=ExtResource( 2 )]
+position = Vector2( 320, 456 )
+
+[node name="personatge2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1208, 464 )
+scale = Vector2( 1.2, 1.2 )
