@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/llama.png-d31e71a2b374cd5fb62296a6ffb88efc.stex"
+path="res://.import/explosion-6.png-6b06c57e972408b060b165a448384d4d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://llama.png"
-dest_files=[ "res://.import/llama.png-d31e71a2b374cd5fb62296a6ffb88efc.stex" ]
+source_file="res://joc llama bum pium pium/explosions-pack-web/spritesheets/explosion-6.png"
+dest_files=[ "res://.import/explosion-6.png-6b06c57e972408b060b165a448384d4d.stex" ]
 
 [params]
 
