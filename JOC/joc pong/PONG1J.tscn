@@ -13,3 +13,4 @@ script = ExtResource( 1 )
 [node name="JUGADOR1" parent="." instance=ExtResource( 3 )]
 
 [node name="IA" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1833, 275.611 )

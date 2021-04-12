@@ -3,7 +3,6 @@ extends Node2D
 func _ready():
 	$MarginContainer/VBoxContainer/TextureButton.grab_focus()
 
-	OS.set_window_size(Vector2(1024, 600))
 
 func _physics_process(delta):
 	if $MarginContainer/VBoxContainer/TextureButton.is_hovered() == true:

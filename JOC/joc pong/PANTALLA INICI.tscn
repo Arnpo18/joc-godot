@@ -20,39 +20,38 @@ __meta__ = {
 }
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-margin_left = 184.0
-margin_top = 128.0
-margin_right = 903.0
-margin_bottom = 440.0
+margin_top = 300.0
+margin_right = 1920.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-margin_right = 719.0
+margin_right = 1920.0
 margin_bottom = 455.0
 custom_constants/separation = 100
 
 [node name="TextureButton" type="TextureButton" parent="MarginContainer/VBoxContainer"]
-margin_left = 42.0
-margin_right = 676.0
+margin_left = 643.0
+margin_right = 1277.0
 margin_bottom = 85.0
 size_flags_horizontal = 4
 texture_normal = ExtResource( 2 )
 texture_focused = ExtResource( 5 )
 
 [node name="TextureButton2" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+margin_left = 600.0
 margin_top = 185.0
-margin_right = 719.0
+margin_right = 1319.0
 margin_bottom = 270.0
 size_flags_horizontal = 4
 texture_normal = ExtResource( 3 )
 texture_focused = ExtResource( 6 )
 
 [node name="TextureButton3" type="TextureButton" parent="MarginContainer/VBoxContainer"]
-margin_left = 152.0
+margin_left = 752.0
 margin_top = 370.0
-margin_right = 567.0
+margin_right = 1167.0
 margin_bottom = 455.0
 size_flags_horizontal = 4
 texture_normal = ExtResource( 7 )

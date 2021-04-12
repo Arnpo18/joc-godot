@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://joc lluita/mapa.tscn" type="PackedScene" id=1]
 [ext_resource path="res://joc lluita/personatge1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://joc lluita/personatge2.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Camera2D.tscn" type="PackedScene" id=4]
-[ext_resource path="res://ParallaxBackground.tscn" type="PackedScene" id=5]
+[ext_resource path="res://joc lluita/Camera2D.tscn" type="PackedScene" id=4]
+[ext_resource path="res://joc lluita/ParallaxBackground.tscn" type="PackedScene" id=5]
+[ext_resource path="res://joc lluita/menu_pausa_lluita.tscn" type="PackedScene" id=6]
 [ext_resource path="res://joc lluita/escena.gd" type="Script" id=9]
 [ext_resource path="res://joc lluita/Hero Knight/vida.png" type="Texture" id=10]
 [ext_resource path="res://joc lluita/Hero Knight 2/vida.png" type="Texture" id=11]
@@ -65,5 +66,10 @@ texture = ExtResource( 11 )
 position = Vector2( 120, 88 )
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 11 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="menu_pausa" parent="CanvasLayer" instance=ExtResource( 6 )]
+visible = false
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]

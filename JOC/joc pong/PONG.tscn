@@ -1,22 +1,23 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://joc pong/PONG.gd" type="Script" id=1]
 [ext_resource path="res://joc pong/BOLA.tscn" type="PackedScene" id=2]
 [ext_resource path="res://joc pong/HUD/BAUHS93.TTF" type="DynamicFontData" id=3]
+[ext_resource path="res://joc pong/menu_pausa.tscn" type="PackedScene" id=4]
 
 [sub_resource type="DynamicFont" id=1]
-size = 22
+size = 40
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 22
+size = 40
 font_data = ExtResource( 3 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 552, 10 )
+extents = Vector2( 1595.68, 10 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 10, 304 )
+extents = Vector2( 26.8608, 624.505 )
 
 [node name="CAMP " type="Node2D"]
 script = ExtResource( 1 )
@@ -33,10 +34,10 @@ __meta__ = {
 [node name="PUNTUACIOJ1" type="Label" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 380.0
-margin_top = 250.0
-margin_right = 436.0
-margin_bottom = 223.0
+margin_left = 1110.0
+margin_top = 380.0
+margin_right = 1166.0
+margin_bottom = 406.0
 custom_fonts/font = SubResource( 1 )
 text = "aaa"
 valign = 1
@@ -47,8 +48,8 @@ __meta__ = {
 [node name="PUNTUACIOJ2" type="Label" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 620.0
-margin_top = 250.0
+margin_left = 810.0
+margin_top = 380.0
 custom_fonts/font = SubResource( 2 )
 text = "aaa"
 __meta__ = {
@@ -58,11 +59,11 @@ __meta__ = {
 [node name="sostre i terra" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sostre i terra"]
-position = Vector2( 504, -8 )
+position = Vector2( 557.939, -10.9966 )
 shape = SubResource( 3 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="sostre i terra"]
-position = Vector2( 520, 608 )
+position = Vector2( 837.641, 1084.46 )
 shape = SubResource( 3 )
 
 [node name="porteria j1" type="Area2D" parent="."]
@@ -70,7 +71,7 @@ position = Vector2( -16, -8 )
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="porteria j1"]
-position = Vector2( -16, 312 )
+position = Vector2( -36.1637, 497.018 )
 shape = SubResource( 4 )
 
 [node name="porteria j2" type="Area2D" parent="."]
@@ -78,7 +79,7 @@ position = Vector2( -16, -16 )
 collision_mask = 2
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="porteria j2"]
-position = Vector2( 1040, 304 )
+position = Vector2( 1967.43, 483.179 )
 shape = SubResource( 4 )
 
 [node name="BOLA" parent="." instance=ExtResource( 2 )]
@@ -86,6 +87,11 @@ shape = SubResource( 4 )
 [node name="Timer" type="Timer" parent="."]
 wait_time = 1.25
 one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="menu_pausa" parent="CanvasLayer" instance=ExtResource( 4 )]
+visible = false
 [connection signal="body_entered" from="porteria j1" to="." method="_on_porteria_j1_body_entered"]
 [connection signal="body_entered" from="porteria j2" to="." method="_on_porteria_j2_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

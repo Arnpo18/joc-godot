@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var velocitat=300
+var velocitat=562
 var moviment=Vector2()
 var pilota
 func direccio_pilota():
@@ -16,4 +16,4 @@ func _ready():
 	position.y=300 # Replace with function body.
 func _physics_process(delta):
 	move_and_slide(Vector2(0,direccio_pilota())*velocitat)
-	position.x=984
+	position.x=1890

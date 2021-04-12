@@ -1,0 +1,387 @@
+[gd_scene load_steps=70 format=2]
+
+[ext_resource path="res://joc lluita/Hero Knight/Sprites/Attack2.png" type="Texture" id=1]
+[ext_resource path="res://joc lluita/Hero Knight/Sprites/Idle.png" type="Texture" id=2]
+[ext_resource path="res://joc lluita/Cool Text - sortir 381400724599294.png" type="Texture" id=3]
+[ext_resource path="res://joc lluita/Hero Knight 2/Sprites/Death.png" type="Texture" id=4]
+[ext_resource path="res://joc lluita/Hero Knight/Sprites/Death.png" type="Texture" id=5]
+[ext_resource path="res://joc lluita/Hero Knight 2/Sprites/Idle.png" type="Texture" id=6]
+[ext_resource path="res://joc lluita/ParallaxBackground.tscn" type="PackedScene" id=7]
+[ext_resource path="res://joc lluita/mapa.tscn" type="PackedScene" id=8]
+[ext_resource path="res://joc lluita/Hero Knight 2/Sprites/Attack.png" type="Texture" id=9]
+[ext_resource path="res://joc lluita/victoria j2.gd" type="Script" id=10]
+[ext_resource path="res://joc lluita/Cool Text - JUGADOR 2 GUANYA 381386872771570.png" type="Texture" id=11]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 180, 180 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 180, 0, 180, 180 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 360, 0, 180, 180 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 540, 0, 180, 180 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 720, 0, 180, 180 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 900, 0, 180, 180 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 1080, 0, 180, 180 )
+
+[sub_resource type="AtlasTexture" id=31]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 180, 180 )
+
+[sub_resource type="AtlasTexture" id=32]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 180, 0, 180, 180 )
+
+[sub_resource type="AtlasTexture" id=33]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 360, 0, 180, 180 )
+
+[sub_resource type="AtlasTexture" id=34]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 540, 0, 180, 180 )
+
+[sub_resource type="AtlasTexture" id=35]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 720, 0, 180, 180 )
+
+[sub_resource type="AtlasTexture" id=36]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 900, 0, 180, 180 )
+
+[sub_resource type="AtlasTexture" id=37]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 1080, 0, 180, 180 )
+
+[sub_resource type="AtlasTexture" id=38]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 1260, 0, 180, 180 )
+
+[sub_resource type="AtlasTexture" id=39]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 1440, 0, 180, 180 )
+
+[sub_resource type="AtlasTexture" id=40]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 1620, 0, 180, 180 )
+
+[sub_resource type="AtlasTexture" id=41]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 1800, 0, 180, 180 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 180, 180 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 180, 0, 180, 180 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 360, 0, 180, 180 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 540, 0, 180, 180 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 720, 0, 180, 180 )
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 900, 0, 180, 180 )
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 1080, 0, 180, 180 )
+
+[sub_resource type="AtlasTexture" id=15]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 1260, 0, 180, 180 )
+
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 1440, 0, 180, 180 )
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 1620, 0, 180, 180 )
+
+[sub_resource type="AtlasTexture" id=18]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 1800, 0, 180, 180 )
+
+[sub_resource type="SpriteFrames" id=19]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
+"loop": false,
+"name": "default",
+"speed": 7.0
+}, {
+"frames": [ SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ) ],
+"loop": false,
+"name": "mort",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
+"loop": true,
+"name": "quiet",
+"speed": 12.0
+} ]
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 140, 140 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 140, 0, 140, 140 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 280, 0, 140, 140 )
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 420, 0, 140, 140 )
+
+[sub_resource type="AtlasTexture" id=24]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 560, 0, 140, 140 )
+
+[sub_resource type="AtlasTexture" id=25]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 700, 0, 140, 140 )
+
+[sub_resource type="AtlasTexture" id=26]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 840, 0, 140, 140 )
+
+[sub_resource type="AtlasTexture" id=27]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 980, 0, 140, 140 )
+
+[sub_resource type="AtlasTexture" id=28]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 1120, 0, 140, 140 )
+
+[sub_resource type="AtlasTexture" id=42]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 140, 140 )
+
+[sub_resource type="AtlasTexture" id=43]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 140, 0, 140, 140 )
+
+[sub_resource type="AtlasTexture" id=44]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 280, 0, 140, 140 )
+
+[sub_resource type="AtlasTexture" id=45]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 420, 0, 140, 140 )
+
+[sub_resource type="AtlasTexture" id=46]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 560, 0, 140, 140 )
+
+[sub_resource type="AtlasTexture" id=47]
+flags = 4
+atlas = ExtResource( 9 )
+region = Rect2( 700, 0, 140, 140 )
+
+[sub_resource type="AtlasTexture" id=48]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 140, 140 )
+
+[sub_resource type="AtlasTexture" id=49]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 140, 0, 140, 140 )
+
+[sub_resource type="AtlasTexture" id=50]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 280, 0, 140, 140 )
+
+[sub_resource type="AtlasTexture" id=51]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 420, 0, 140, 140 )
+
+[sub_resource type="AtlasTexture" id=52]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 560, 0, 140, 140 )
+
+[sub_resource type="AtlasTexture" id=53]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 700, 0, 140, 140 )
+
+[sub_resource type="AtlasTexture" id=54]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 840, 0, 140, 140 )
+
+[sub_resource type="AtlasTexture" id=55]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 980, 0, 140, 140 )
+
+[sub_resource type="AtlasTexture" id=56]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 1120, 0, 140, 140 )
+
+[sub_resource type="AtlasTexture" id=57]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 1260, 0, 140, 140 )
+
+[sub_resource type="AtlasTexture" id=58]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 1400, 0, 140, 140 )
+
+[sub_resource type="SpriteFrames" id=29]
+animations = [ {
+"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ) ],
+"loop": false,
+"name": "default",
+"speed": 6.0
+}, {
+"frames": [ SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ) ],
+"loop": false,
+"name": "atac",
+"speed": 8.0
+}, {
+"frames": [ SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ) ],
+"loop": true,
+"name": "quiet",
+"speed": 10.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=30]
+
+[node name="victoriaj2" type="Node2D"]
+script = ExtResource( 10 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 832, 592 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 19 )
+animation = "mort"
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+position = Vector2( 1056, 616 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 29 )
+animation = "quiet"
+flip_h = true
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+position = Vector2( 960, 540 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+shape = SubResource( 30 )
+
+[node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
+current = true
+
+[node name="Cool Text - JUGADOR 1 GUANYA 381386853516438" type="Sprite" parent="."]
+position = Vector2( 960, 280 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 11 )
+
+[node name="StaticBody2D" parent="." instance=ExtResource( 8 )]
+position = Vector2( 64, 224 )
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 7 )]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_left = 840.0
+margin_top = 380.0
+margin_bottom = 40.0
+rect_scale = Vector2( 0.5, 0.5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_right = 460.0
+margin_bottom = 155.0
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+margin_right = 460.0
+margin_bottom = 155.0
+action_mode = 0
+texture_normal = ExtResource( 3 )
+texture_hover = ExtResource( 3 )
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
+[connection signal="animation_finished" from="AnimatedSprite2" to="." method="_on_AnimatedSprite2_animation_finished"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/TextureButton" to="." method="_on_TextureButton_pressed"]
