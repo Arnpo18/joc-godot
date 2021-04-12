@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://joc lluita/mapa assets/cloudySky_640x360px.png" type="Texture" id=1]
+[ext_resource path="res://joc lluita/mapa assets/par2_tileable_640x360px.png" type="Texture" id=2]
+[ext_resource path="res://joc lluita/mapa assets/par1_tileable_640x360px.png" type="Texture" id=3]
+[ext_resource path="res://joc lluita/mapa assets/par3_tileable_640x360px.png" type="Texture" id=4]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+offset = Vector2( 0, -685 )
+scale = Vector2( 1.2, 1.2 )
+transform = Transform2D( 1.2, 0, 0, 1.2, 0, -685 )
+scroll_base_scale = Vector2( 1, 0 )
+scroll_ignore_camera_zoom = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.1, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxLayer"]
+position = Vector2( 1008, 240 )
+scale = Vector2( 1, 1.4 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 4060, 360 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.23, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxLayer2"]
+position = Vector2( 1008, 408 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 130, 4170, 230 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.4, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxLayer3"]
+position = Vector2( 960, 440 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 180, 4080, 170 )
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.6, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxLayer4"]
+position = Vector2( 1048, 448 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 0, 200, 4250, 160 )
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.6, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxLayer5"]
+position = Vector2( 1046.67, 957.5 )
+scale = Vector2( 1, 11 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 0, 280, 4250, 80 )
