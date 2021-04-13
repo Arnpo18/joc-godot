@@ -2,7 +2,6 @@ extends KinematicBody2D
 
 var velocitat : Vector2
 var salt_aeri = 1
-var anima_segonsalt : bool
 
 
 func _ready():
