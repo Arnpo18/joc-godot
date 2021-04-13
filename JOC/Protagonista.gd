@@ -6,7 +6,7 @@ var anima_segonsalt : bool
 
 
 func _ready():
-	$AnimatedSprite.play('Appearing')
+	pass
 
 func _process(delta):
 	# Moviment del jugador
