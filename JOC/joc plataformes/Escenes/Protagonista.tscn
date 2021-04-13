@@ -287,13 +287,11 @@ animations = [ {
 extents = Vector2( 9.09973, 10.6191 )
 
 [node name="Protagonista" type="KinematicBody2D"]
-position = Vector2( 500, 500 )
 script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 56 )
-animation = "Appearing"
-frame = 6
+animation = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 4 )
