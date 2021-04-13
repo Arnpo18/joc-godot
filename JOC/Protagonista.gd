@@ -5,6 +5,7 @@ var salt_aeri = 1
 
 
 func _ready():
+	$AnimatedSprite.play('Appearing')
 	pass
 
 func _process(delta):
