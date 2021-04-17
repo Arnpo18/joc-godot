@@ -42,7 +42,7 @@ func _physics_process(delta):
 				$AnimatedSprite.play('camina')
 				$AnimatedSprite.scale.x=-1
 			if Input.is_action_just_pressed("salta_lluita") && is_on_floor():
-				moviment.y=-340
+				moviment.y=-360
 			if is_on_floor()==false && moviment.y <0:
 				$AnimatedSprite.play('salt')
 			if is_on_floor()==false && moviment.y >0:
@@ -68,9 +68,11 @@ func _on_espasa_body_entered(body):
 			body.rep_mal() 
 func rep_mal():
 	vida-=50
+	$AnimatedSprite.play('mal')
 func atacar():
 	$AnimatedSprite/espasa/CollisionShape2D.set_deferred('disabled',false)
 	$alataque.start()
+	
 func _on_alataque_timeout():
 	$AnimatedSprite/espasa/CollisionShape2D.set_deferred('disabled',true) 
 func mortj():
@@ -79,11 +81,13 @@ func mortj():
 	
 func _on_mortt_timeout():
 	vida=400
-	position=Vector2(680,250)
+	moviment.y=0
+	position=Vector2(64,256)
 	mort=false
 	gravetat=0
 	$espera.start()
 	vides-=1
+	$AnimatedSprite.play('mal')
 func _on_AnimatedSprite_animation_finished():
 	if $AnimatedSprite.get_animation()=='mort':
 		$mortt.start()

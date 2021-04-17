@@ -171,13 +171,13 @@ animations = [ {
 script = ExtResource( 4 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 832, 592 )
+position = Vector2( 688, 688 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 19 )
 animation = "quiet"
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
-position = Vector2( 1056, 616 )
+position = Vector2( 888, 744 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 29 )
 flip_h = true
