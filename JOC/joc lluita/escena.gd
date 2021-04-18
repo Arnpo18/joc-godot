@@ -8,7 +8,6 @@ func _ready():
 	$Camera2D.add_target($personatge1)
 	$Camera2D.add_target($personatge2)
 
-
 func _process(delta):
 	if $personatge1.vides==2:
 		$ParallaxBackground2/vida_j1_2.hide()

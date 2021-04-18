@@ -4,7 +4,7 @@ var moviment=Vector2()
 var velocitat=300
 var atacant=false
 var velocitat2 = 100
-var vida= 400
+var vida = 400
 var vides=3
 var mort = false
 var atac = true
@@ -16,16 +16,17 @@ func _ready():
 	pass 
 
 func _physics_process(delta):
-	$AnimatedSprite/espasa/CollisionShape2D.set_deferred('disabled',true)
+	$TextureProgress.value = vida
+	$espasa/CollisionShape2D.set_deferred('disabled',true)
 	moviment.y+=gravetat*delta
 	moviment.x=0
 	if vida>0:
 		mort=false
-		
 	else:
 		mort=true
+	if mort ==true:
 		mortj()
-		
+		$mort.start()
 	if mort==false:
 		if atacant==true:
 			if Input.is_action_pressed('dreta_lluita'):
@@ -37,10 +38,12 @@ func _physics_process(delta):
 				moviment.x=velocitat
 				$AnimatedSprite.play('camina')
 				$AnimatedSprite.scale.x=1
+				$espasa.scale.x=1
 			if Input.is_action_pressed('esquerra_lluita'):
 				moviment.x=-velocitat
 				$AnimatedSprite.play('camina')
 				$AnimatedSprite.scale.x=-1
+				$espasa.scale.x=-1
 			if Input.is_action_just_pressed("salta_lluita") && is_on_floor():
 				moviment.y=-360
 			if is_on_floor()==false && moviment.y <0:
@@ -68,18 +71,10 @@ func _on_espasa_body_entered(body):
 			body.rep_mal() 
 func rep_mal():
 	vida-=50
-	$AnimatedSprite.play('mal')
 func atacar():
-	$AnimatedSprite/espasa/CollisionShape2D.set_deferred('disabled',false)
-	$alataque.start()
-	
-func _on_alataque_timeout():
-	$AnimatedSprite/espasa/CollisionShape2D.set_deferred('disabled',true) 
+	$espasa/CollisionShape2D.set_deferred('disabled',false)
 func mortj():
 	$AnimatedSprite.play('mort')
-	
-	
-func _on_mortt_timeout():
 	vida=400
 	moviment.y=0
 	position=Vector2(64,256)
@@ -87,12 +82,8 @@ func _on_mortt_timeout():
 	gravetat=0
 	$espera.start()
 	vides-=1
-	$AnimatedSprite.play('mal')
-func _on_AnimatedSprite_animation_finished():
-	if $AnimatedSprite.get_animation()=='mort':
-		$mortt.start()
-
-
 func _on_espera_timeout():
 	gravetat=670 # Replace with function body.
 	
+	
+
