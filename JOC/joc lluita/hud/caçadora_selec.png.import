@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/knight1.png-949bfbb481ede5c2d116c5cd60977e77.stex"
+path="res://.import/caçadora_selec.png-b42c7c6e969f3f875c628b1ebcbf45f2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://joc lluita/hud/knight1.png"
-dest_files=[ "res://.import/knight1.png-949bfbb481ede5c2d116c5cd60977e77.stex" ]
+source_file="res://joc lluita/hud/caçadora_selec.png"
+dest_files=[ "res://.import/caçadora_selec.png-b42c7c6e969f3f875c628b1ebcbf45f2.stex" ]
 
 [params]
 

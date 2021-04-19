@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/huntress.png-b70fd97d1f6fbd30f1693dcd9ecdfd66.stex"
+path="res://.import/cavaller2_selec.png-9ecfa7c3a7d818d7dc5bbc7da2f14888.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://joc lluita/hud/huntress.png"
-dest_files=[ "res://.import/huntress.png-b70fd97d1f6fbd30f1693dcd9ecdfd66.stex" ]
+source_file="res://joc lluita/hud/cavaller2_selec.png"
+dest_files=[ "res://.import/cavaller2_selec.png-9ecfa7c3a7d818d7dc5bbc7da2f14888.stex" ]
 
 [params]
 

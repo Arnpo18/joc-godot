@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/50a406077b4460d47bc95b49d32e1189.jpg-4da35f8f0e0bdc676271135dbdec1c9a.stex"
+path="res://.import/cavaller1_selec.png-3643dfeb6c5d3f4d79905fa5853f8cdb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://joc lluita/50a406077b4460d47bc95b49d32e1189.jpg"
-dest_files=[ "res://.import/50a406077b4460d47bc95b49d32e1189.jpg-4da35f8f0e0bdc676271135dbdec1c9a.stex" ]
+source_file="res://joc lluita/hud/cavaller1_selec.png"
+dest_files=[ "res://.import/cavaller1_selec.png-3643dfeb6c5d3f4d79905fa5853f8cdb.stex" ]
 
 [params]
 
