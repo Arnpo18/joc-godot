@@ -3,10 +3,10 @@ extends KinematicBody2D
 var animacio_inicial = false
 var velocitat : Vector2
 var salt_aeri = false
-var gravetat = 200
+var gravetat = 500
 var moviment = 150
-var salt = 200
-var segon_salt = 150
+var salt = 400
+var segon_salt = 350
 
 
 func _ready():

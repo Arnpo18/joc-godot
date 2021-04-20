@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 var velocitat : Vector2
-var gravetat = 200
+var gravetat = 500
 var target : KinematicBody2D
 var target_no : KinematicBody2D
 var mov_dreta = false
@@ -9,6 +9,7 @@ var mov_esq = true
 var quiet_1 = false
 var quiet_2 = false
 var moviment = 100
+var cam_enfadat = false
 
 func _ready():
 	$Caminar.start()
@@ -16,15 +17,18 @@ func _ready():
 
 func _physics_process(delta):
 	
-	if target:
+	if cam_enfadat == true:
+		velocitat.x = velocitat.x
+	
+	elif target:
 		$AnimatedSprite.play('Run')
 		if target.position.x > position.x:
 			velocitat.x = moviment*1.5
 		if target.position.x < position.x:
 			velocitat.x = -moviment*1.5
-		if target.position.x - position.x == 100 or position.x - target.position.x == 100:
-			velocitat.x = 0
-		
+		if target.position.x - position.x < 20 and target.position.x - position.x > -20:
+			cam_enfadat = true
+			$Normal.start()
 	
 	else:
 		if mov_dreta == true:
@@ -79,3 +83,8 @@ func _on_Vision_body_entered(body):
 func _on_Vision_body_exited(body):
 	if body.has_method('mal'):
 		target = target_no
+
+
+func _on_Normal_timeout():
+	cam_enfadat = false
+	$Normal.start()
