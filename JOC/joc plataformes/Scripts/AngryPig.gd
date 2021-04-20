@@ -18,8 +18,7 @@ func _ready():
 func _physics_process(delta):
 	
 	if cam_enfadat == true:
-		velocitat.x = velocitat.x
-	
+		pass
 	elif target:
 		$AnimatedSprite.play('Run')
 		if target.position.x > position.x:
