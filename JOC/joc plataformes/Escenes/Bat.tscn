@@ -104,59 +104,59 @@ atlas = ExtResource( 2 )
 region = Rect2( 276, 0, 46, 30 )
 
 [sub_resource type="AtlasTexture" id=25]
-atlas = ExtResource( 5 )
+atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 46, 30 )
 
 [sub_resource type="AtlasTexture" id=26]
-atlas = ExtResource( 5 )
+atlas = ExtResource( 3 )
 region = Rect2( 46, 0, 46, 30 )
 
 [sub_resource type="AtlasTexture" id=27]
-atlas = ExtResource( 5 )
+atlas = ExtResource( 3 )
 region = Rect2( 92, 0, 46, 30 )
 
 [sub_resource type="AtlasTexture" id=28]
-atlas = ExtResource( 5 )
+atlas = ExtResource( 3 )
 region = Rect2( 138, 0, 46, 30 )
 
 [sub_resource type="AtlasTexture" id=29]
-atlas = ExtResource( 5 )
+atlas = ExtResource( 3 )
 region = Rect2( 184, 0, 46, 30 )
 
 [sub_resource type="AtlasTexture" id=30]
-atlas = ExtResource( 5 )
+atlas = ExtResource( 3 )
 region = Rect2( 230, 0, 46, 30 )
 
 [sub_resource type="AtlasTexture" id=31]
-atlas = ExtResource( 5 )
+atlas = ExtResource( 3 )
 region = Rect2( 276, 0, 46, 30 )
 
 [sub_resource type="AtlasTexture" id=32]
-atlas = ExtResource( 3 )
+atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 46, 30 )
 
 [sub_resource type="AtlasTexture" id=33]
-atlas = ExtResource( 3 )
+atlas = ExtResource( 5 )
 region = Rect2( 46, 0, 46, 30 )
 
 [sub_resource type="AtlasTexture" id=34]
-atlas = ExtResource( 3 )
+atlas = ExtResource( 5 )
 region = Rect2( 92, 0, 46, 30 )
 
 [sub_resource type="AtlasTexture" id=35]
-atlas = ExtResource( 3 )
+atlas = ExtResource( 5 )
 region = Rect2( 138, 0, 46, 30 )
 
 [sub_resource type="AtlasTexture" id=36]
-atlas = ExtResource( 3 )
+atlas = ExtResource( 5 )
 region = Rect2( 184, 0, 46, 30 )
 
 [sub_resource type="AtlasTexture" id=37]
-atlas = ExtResource( 3 )
+atlas = ExtResource( 5 )
 region = Rect2( 230, 0, 46, 30 )
 
 [sub_resource type="AtlasTexture" id=38]
-atlas = ExtResource( 3 )
+atlas = ExtResource( 5 )
 region = Rect2( 276, 0, 46, 30 )
 
 [sub_resource type="SpriteFrames" id=39]
@@ -164,7 +164,7 @@ animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
 "loop": true,
 "name": "Idle",
-"speed": 20.0
+"speed": 10.0
 }, {
 "frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
 "loop": false,
@@ -174,17 +174,17 @@ animations = [ {
 "frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
 "loop": false,
 "name": "Enganchar",
-"speed": 20.0
+"speed": 10.0
 }, {
 "frames": [ SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ) ],
-"loop": false,
-"name": "Desenganchar",
-"speed": 20.0
-}, {
-"frames": [ SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ) ],
 "loop": true,
 "name": "Volar",
 "speed": 20.0
+}, {
+"frames": [ SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ) ],
+"loop": false,
+"name": "Desenganchar",
+"speed": 10.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=40]
@@ -192,7 +192,7 @@ radius = 8.18729
 height = 4.60187
 
 [sub_resource type="CapsuleShape2D" id=41]
-radius = 194.666
+radius = 170.308
 height = 222.029
 
 [node name="Bat" type="KinematicBody2D"]
@@ -201,7 +201,7 @@ script = ExtResource( 6 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 39 )
-animation = "Volar"
+animation = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 40 )
@@ -211,5 +211,6 @@ shape = SubResource( 40 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Vision"]
 rotation = 1.5708
 shape = SubResource( 41 )
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="body_entered" from="Vision" to="." method="_on_Vision_body_entered"]
 [connection signal="body_exited" from="Vision" to="." method="_on_Vision_body_exited"]
