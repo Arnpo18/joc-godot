@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://joc lluita/mapa.tscn" type="PackedScene" id=1]
-[ext_resource path="res://joc lluita/personatges_escena/1.caçadora.tscn" type="PackedScene" id=2]
+[ext_resource path="res://joc lluita/personatges_escena/1.samurai.tscn" type="PackedScene" id=2]
 [ext_resource path="res://joc lluita/personatges_escena/2.cavaller_2.tscn" type="PackedScene" id=3]
 [ext_resource path="res://joc lluita/Camera2D.tscn" type="PackedScene" id=4]
 [ext_resource path="res://joc lluita/ParallaxBackground.tscn" type="PackedScene" id=5]
@@ -41,8 +41,10 @@ position = Vector2( 640, 952 )
 shape = SubResource( 1 )
 
 [node name="personatge2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1304, 600 )
 
 [node name="personatge1" parent="." instance=ExtResource( 2 )]
+position = Vector2( 24, 552 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

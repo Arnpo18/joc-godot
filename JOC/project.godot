@@ -18,6 +18,10 @@ _global_script_class_icons={
 config/name="Joc"
 config/icon="res://icon.png"
 
+[autoload]
+
+GlobalLluita="*res://joc lluita/global_lluita.gd"
+
 [display]
 
 window/size/width=1920

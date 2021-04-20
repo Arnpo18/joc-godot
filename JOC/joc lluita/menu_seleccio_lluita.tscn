@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://joc lluita/hud/cavaller1.PNG" type="Texture" id=1]
 [ext_resource path="res://joc lluita/hud/cavaller1_selec.png" type="Texture" id=2]
@@ -8,111 +8,341 @@
 [ext_resource path="res://joc lluita/hud/caçadora_selec.png" type="Texture" id=6]
 [ext_resource path="res://joc lluita/hud/caçadora.PNG" type="Texture" id=7]
 [ext_resource path="res://joc lluita/hud/samurai_selec.png" type="Texture" id=8]
+[ext_resource path="res://joc lluita/hud/reina.PNG" type="Texture" id=9]
+[ext_resource path="res://joc lluita/hud/reina_png.png" type="Texture" id=10]
+[ext_resource path="res://joc lluita/hud/x_selec.png" type="Texture" id=11]
+[ext_resource path="res://joc lluita/hud/x.PNG" type="Texture" id=12]
+[ext_resource path="res://joc lluita/menu_seleccio_lluita.gd" type="Script" id=13]
+[ext_resource path="res://joc lluita/hud/cavaller1_focus.png" type="Texture" id=14]
+[ext_resource path="res://joc lluita/hud/caçadora_focus.png" type="Texture" id=15]
+[ext_resource path="res://joc lluita/hud/cavaller2_focus.png" type="Texture" id=16]
+[ext_resource path="res://joc lluita/hud/reina_focus.png" type="Texture" id=17]
+[ext_resource path="res://joc lluita/hud/samurai_focus.png" type="Texture" id=18]
 
-[sub_resource type="BitmapFont" id=1]
+[sub_resource type="DynamicFont" id=1]
+size = 50
+outline_size = 2
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -8.0
+margin_top = 24.0
+margin_right = -8.0
+margin_bottom = 24.0
+script = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-margin_left = 128.0
-margin_top = 400.0
-margin_right = 1132.0
-margin_bottom = 1384.0
-rect_scale = Vector2( 0.5, 0.5 )
+margin_left = 136.0
+margin_top = 296.0
+margin_right = 1140.0
+margin_bottom = 1774.0
+rect_scale = Vector2( 0.4, 0.4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 margin_right = 1004.0
-margin_bottom = 984.0
+margin_bottom = 2012.0
 
-[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 margin_right = 1004.0
-margin_bottom = 984.0
+margin_bottom = 1508.0
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+margin_right = 1004.0
+margin_bottom = 1508.0
 columns = 2
 
-[node name="TextureButton" type="TextureButton" parent="MarginContainer/VBoxContainer/GridContainer"]
+[node name="cavaller1" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer"]
 margin_right = 500.0
-margin_bottom = 490.0
+margin_bottom = 500.0
 texture_normal = ExtResource( 1 )
 texture_hover = ExtResource( 2 )
+texture_focused = ExtResource( 14 )
 
-[node name="TextureButton2" type="TextureButton" parent="MarginContainer/VBoxContainer/GridContainer"]
-margin_left = 504.0
-margin_right = 1004.0
-margin_bottom = 490.0
-texture_normal = ExtResource( 3 )
-texture_hover = ExtResource( 4 )
-
-[node name="TextureButton3" type="TextureButton" parent="MarginContainer/VBoxContainer/GridContainer"]
-margin_top = 494.0
-margin_right = 500.0
-margin_bottom = 984.0
-texture_normal = ExtResource( 5 )
-texture_hover = ExtResource( 8 )
-
-[node name="TextureButton4" type="TextureButton" parent="MarginContainer/VBoxContainer/GridContainer"]
-margin_left = 504.0
-margin_top = 494.0
-margin_right = 1004.0
-margin_bottom = 984.0
-texture_normal = ExtResource( 7 )
-texture_hover = ExtResource( 6 )
-
-[node name="MarginContainer2" type="MarginContainer" parent="."]
-margin_left = 1288.0
-margin_top = 408.0
-margin_right = 2292.0
-margin_bottom = 1392.0
-rect_scale = Vector2( 0.5, 0.5 )
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/cavaller1"]
+margin_left = -740.0
+margin_top = 340.0
+margin_right = -240.0
+margin_bottom = 401.0
+rect_scale = Vector2( 4, 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "CAVALLER ÀGIL"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer2"]
-margin_right = 1004.0
-margin_bottom = 984.0
-
-[node name="GridContainer" type="GridContainer" parent="MarginContainer2/VBoxContainer2"]
-margin_right = 1004.0
-margin_bottom = 984.0
-columns = 2
-
-[node name="TextureButton" type="TextureButton" parent="MarginContainer2/VBoxContainer2/GridContainer"]
-margin_right = 500.0
-margin_bottom = 490.0
-texture_normal = ExtResource( 1 )
-texture_hover = ExtResource( 2 )
-
-[node name="TextureButton2" type="TextureButton" parent="MarginContainer2/VBoxContainer2/GridContainer"]
+[node name="cavaller2" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer"]
 margin_left = 504.0
 margin_right = 1004.0
-margin_bottom = 490.0
+margin_bottom = 500.0
 texture_normal = ExtResource( 3 )
 texture_hover = ExtResource( 4 )
+texture_focused = ExtResource( 16 )
 
-[node name="TextureButton3" type="TextureButton" parent="MarginContainer2/VBoxContainer2/GridContainer"]
-margin_top = 494.0
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/cavaller2"]
+margin_left = -744.0
+margin_top = 340.0
+margin_right = -244.0
+margin_bottom = 401.0
+rect_scale = Vector2( 4, 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "CAVALLER PESAT"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="samurai" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer"]
+margin_top = 504.0
 margin_right = 500.0
-margin_bottom = 984.0
+margin_bottom = 1004.0
 texture_normal = ExtResource( 5 )
 texture_hover = ExtResource( 8 )
+texture_focused = ExtResource( 18 )
 
-[node name="TextureButton4" type="TextureButton" parent="MarginContainer2/VBoxContainer2/GridContainer"]
+[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/samurai"]
+margin_left = -740.0
+margin_top = 336.0
+margin_right = -240.0
+margin_bottom = 397.0
+rect_scale = Vector2( 4, 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "SAMURAI"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="piba" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer"]
 margin_left = 504.0
-margin_top = 494.0
+margin_top = 504.0
 margin_right = 1004.0
-margin_bottom = 984.0
+margin_bottom = 1004.0
 texture_normal = ExtResource( 7 )
 texture_hover = ExtResource( 6 )
+texture_focused = ExtResource( 15 )
+
+[node name="Label4" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/piba"]
+margin_left = -744.0
+margin_top = 336.0
+margin_right = -244.0
+margin_bottom = 397.0
+rect_scale = Vector2( 4, 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "CAÇADORA"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="reina" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer"]
+margin_top = 1008.0
+margin_right = 500.0
+margin_bottom = 1508.0
+texture_normal = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+texture_focused = ExtResource( 17 )
+
+[node name="Label5" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/reina"]
+margin_left = -740.0
+margin_top = 332.0
+margin_right = -240.0
+margin_bottom = 393.0
+rect_scale = Vector2( 4, 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "REINA"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="x" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer/GridContainer"]
+margin_left = 504.0
+margin_top = 1008.0
+margin_right = 1004.0
+margin_bottom = 1508.0
+texture_normal = ExtResource( 12 )
+texture_hover = ExtResource( 11 )
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+margin_left = 1400.0
+margin_top = 296.0
+margin_right = 2404.0
+margin_bottom = 1804.0
+rect_scale = Vector2( 0.4, 0.4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2"]
+margin_right = 1004.0
+margin_bottom = 1508.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2/VBoxContainer"]
+margin_right = 1004.0
+margin_bottom = 1508.0
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer2/VBoxContainer/HBoxContainer"]
+margin_right = 1004.0
+margin_bottom = 1508.0
+columns = 2
+
+[node name="cavaller1_2" type="TextureButton" parent="MarginContainer2/VBoxContainer/HBoxContainer/GridContainer"]
+margin_right = 500.0
+margin_bottom = 500.0
+texture_normal = ExtResource( 1 )
+texture_hover = ExtResource( 2 )
+texture_focused = ExtResource( 14 )
+
+[node name="Label" type="Label" parent="MarginContainer2/VBoxContainer/HBoxContainer/GridContainer/cavaller1_2"]
+margin_left = -740.0
+margin_top = 340.0
+margin_right = -240.0
+margin_bottom = 401.0
+rect_scale = Vector2( 4, 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "CAVALLER ÀGIL"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cavaller2_2" type="TextureButton" parent="MarginContainer2/VBoxContainer/HBoxContainer/GridContainer"]
+margin_left = 504.0
+margin_right = 1004.0
+margin_bottom = 500.0
+texture_normal = ExtResource( 3 )
+texture_hover = ExtResource( 4 )
+texture_focused = ExtResource( 16 )
+
+[node name="Label2" type="Label" parent="MarginContainer2/VBoxContainer/HBoxContainer/GridContainer/cavaller2_2"]
+margin_left = -744.0
+margin_top = 340.0
+margin_right = -244.0
+margin_bottom = 401.0
+rect_scale = Vector2( 4, 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "CAVALLER PESAT"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="samurai_2" type="TextureButton" parent="MarginContainer2/VBoxContainer/HBoxContainer/GridContainer"]
+margin_top = 504.0
+margin_right = 500.0
+margin_bottom = 1004.0
+texture_normal = ExtResource( 5 )
+texture_hover = ExtResource( 8 )
+texture_focused = ExtResource( 18 )
+
+[node name="Label3" type="Label" parent="MarginContainer2/VBoxContainer/HBoxContainer/GridContainer/samurai_2"]
+margin_left = -740.0
+margin_top = 336.0
+margin_right = -240.0
+margin_bottom = 397.0
+rect_scale = Vector2( 4, 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "SAMURAI"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="piba_2" type="TextureButton" parent="MarginContainer2/VBoxContainer/HBoxContainer/GridContainer"]
+margin_left = 504.0
+margin_top = 504.0
+margin_right = 1004.0
+margin_bottom = 1004.0
+texture_normal = ExtResource( 7 )
+texture_hover = ExtResource( 6 )
+texture_focused = ExtResource( 15 )
+
+[node name="Label4" type="Label" parent="MarginContainer2/VBoxContainer/HBoxContainer/GridContainer/piba_2"]
+margin_left = -744.0
+margin_top = 336.0
+margin_right = -244.0
+margin_bottom = 397.0
+rect_scale = Vector2( 4, 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "CAÇADORA"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="reina_2" type="TextureButton" parent="MarginContainer2/VBoxContainer/HBoxContainer/GridContainer"]
+margin_top = 1008.0
+margin_right = 500.0
+margin_bottom = 1508.0
+texture_normal = ExtResource( 9 )
+texture_hover = ExtResource( 10 )
+texture_focused = ExtResource( 17 )
+
+[node name="Label5" type="Label" parent="MarginContainer2/VBoxContainer/HBoxContainer/GridContainer/reina_2"]
+margin_left = -740.0
+margin_top = 332.0
+margin_right = -240.0
+margin_bottom = 393.0
+rect_scale = Vector2( 4, 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "REINA"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="x_2" type="TextureButton" parent="MarginContainer2/VBoxContainer/HBoxContainer/GridContainer"]
+margin_left = 504.0
+margin_top = 1008.0
+margin_right = 1004.0
+margin_bottom = 1508.0
+texture_normal = ExtResource( 12 )
+texture_hover = ExtResource( 11 )
 
 [node name="Label" type="Label" parent="."]
-margin_right = 40.0
-margin_bottom = 14.0
+margin_left = 248.0
+margin_top = 224.0
+margin_right = 288.0
+margin_bottom = 238.0
+rect_scale = Vector2( 4, 4 )
 custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "JUGADOR 1
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/cavaller1" to="." method="_on_cavaller1_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/cavaller2" to="." method="_on_cavaller2_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/samurai" to="." method="_on_samurai_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/piba" to="." method="_on_piba_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/reina" to="." method="_on_reina_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/x" to="." method="_on_x_pressed"]
+[connection signal="pressed" from="MarginContainer2/VBoxContainer/HBoxContainer/GridContainer/cavaller1_2" to="." method="_on_cavaller1_pressed"]
+[connection signal="pressed" from="MarginContainer2/VBoxContainer/HBoxContainer/GridContainer/cavaller1_2" to="." method="_on_cavaller1_2_pressed"]
+[connection signal="pressed" from="MarginContainer2/VBoxContainer/HBoxContainer/GridContainer/cavaller2_2" to="." method="_on_cavaller2_2_pressed"]
+[connection signal="pressed" from="MarginContainer2/VBoxContainer/HBoxContainer/GridContainer/samurai_2" to="." method="_on_samurai_2_pressed"]
+[connection signal="pressed" from="MarginContainer2/VBoxContainer/HBoxContainer/GridContainer/piba_2" to="." method="_on_piba_2_pressed"]
+[connection signal="pressed" from="MarginContainer2/VBoxContainer/HBoxContainer/GridContainer/reina_2" to="." method="_on_reina_2_pressed"]
+[connection signal="pressed" from="MarginContainer2/VBoxContainer/HBoxContainer/GridContainer/x_2" to="." method="_on_x_2_pressed"]
+[connection signal="pressed" from="MarginContainer2/VBoxContainer/HBoxContainer/GridContainer/x_2" to="." method="_on_x_pressed"]
