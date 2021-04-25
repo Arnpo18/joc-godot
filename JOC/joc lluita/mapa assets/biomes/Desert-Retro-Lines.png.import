@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BG1.png-3a235c1435bb5e3fa9a16a595e14736f.stex"
+path="res://.import/Desert-Retro-Lines.png-c72be61a5c23af47f93403f8e33bbee4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://joc lluita/mapa assets/FreeCuteTileset/BG1.png"
-dest_files=[ "res://.import/BG1.png-3a235c1435bb5e3fa9a16a595e14736f.stex" ]
+source_file="res://joc lluita/mapa assets/biomes/Desert-Retro-Lines.png"
+dest_files=[ "res://.import/Desert-Retro-Lines.png-c72be61a5c23af47f93403f8e33bbee4.stex" ]
 
 [params]
 

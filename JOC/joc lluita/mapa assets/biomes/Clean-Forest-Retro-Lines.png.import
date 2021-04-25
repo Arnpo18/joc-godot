@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BG3.png-2bec01035f58aef6acf3bf2e28b21143.stex"
+path="res://.import/Clean-Forest-Retro-Lines.png-c4be099a268ed3c8c25173b64099e631.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://joc lluita/mapa assets/FreeCuteTileset/BG3.png"
-dest_files=[ "res://.import/BG3.png-2bec01035f58aef6acf3bf2e28b21143.stex" ]
+source_file="res://joc lluita/mapa assets/biomes/Clean-Forest-Retro-Lines.png"
+dest_files=[ "res://.import/Clean-Forest-Retro-Lines.png-c4be099a268ed3c8c25173b64099e631.stex" ]
 
 [params]
 

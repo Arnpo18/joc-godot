@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Mockup2x.png-a703b6be41ac21b73f5e6e0b2fd77567.stex"
+path="res://.import/Retro-Lines-Player.png-f7bbbe9d7d886d52831ec7e6ca805ec6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://joc lluita/mapa assets/FreeCuteTileset/Mockup2x.png"
-dest_files=[ "res://.import/Mockup2x.png-a703b6be41ac21b73f5e6e0b2fd77567.stex" ]
+source_file="res://joc lluita/mapa assets/Retro-Lines-Player.png"
+dest_files=[ "res://.import/Retro-Lines-Player.png-f7bbbe9d7d886d52831ec7e6ca805ec6.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/samurai.png-31b6fd74c09e7a1440e1136a6bb0d0b3.stex"
+path="res://.import/Clean-Winter-Retro-Lines.png-53f7ef90cb27fda340d5073bd92ac4be.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://joc lluita/hud/samurai.png"
-dest_files=[ "res://.import/samurai.png-31b6fd74c09e7a1440e1136a6bb0d0b3.stex" ]
+source_file="res://joc lluita/mapa assets/biomes/Clean-Winter-Retro-Lines.png"
+dest_files=[ "res://.import/Clean-Winter-Retro-Lines.png-53f7ef90cb27fda340d5073bd92ac4be.stex" ]
 
 [params]
 

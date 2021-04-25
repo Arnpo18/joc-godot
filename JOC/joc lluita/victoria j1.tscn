@@ -4,10 +4,11 @@
 [ext_resource path="res://joc lluita/Hero Knight 2/Sprites/Death.png" type="Texture" id=2]
 [ext_resource path="res://joc lluita/Cool Text - JUGADOR 1 GUANYA 381386853516438.png" type="Texture" id=3]
 [ext_resource path="res://joc lluita/victoria j1.gd" type="Script" id=4]
-[ext_resource path="res://joc lluita/mapa.tscn" type="PackedScene" id=5]
+[ext_resource path="res://joc lluita/mapa1.tscn" type="PackedScene" id=5]
 [ext_resource path="res://joc lluita/Hero Knight/Sprites/Idle.png" type="Texture" id=6]
 [ext_resource path="res://joc lluita/ParallaxBackground.tscn" type="PackedScene" id=7]
 [ext_resource path="res://joc lluita/Cool Text - sortir 381400724599294.png" type="Texture" id=8]
+
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4

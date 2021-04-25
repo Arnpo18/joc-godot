@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ExampleTiles.png-50a2d63129f45faadbac7b8efa018556.stex"
+path="res://.import/Clean-Desert-Retro-Lines.png-48a995b45e6a1bfdf0c5255937ba2027.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://joc lluita/mapa assets/FreeCuteTileset/ExampleTiles.png"
-dest_files=[ "res://.import/ExampleTiles.png-50a2d63129f45faadbac7b8efa018556.stex" ]
+source_file="res://joc lluita/mapa assets/biomes/Clean-Desert-Retro-Lines.png"
+dest_files=[ "res://.import/Clean-Desert-Retro-Lines.png-48a995b45e6a1bfdf0c5255937ba2027.stex" ]
 
 [params]
 

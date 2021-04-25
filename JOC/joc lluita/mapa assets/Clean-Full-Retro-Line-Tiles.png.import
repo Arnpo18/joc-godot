@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/samurai.png-31b6fd74c09e7a1440e1136a6bb0d0b3.stex"
+path="res://.import/Clean-Full-Retro-Line-Tiles.png-7e6361ab986bc5c637e8c24bed817055.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://joc lluita/hud/samurai.png"
-dest_files=[ "res://.import/samurai.png-31b6fd74c09e7a1440e1136a6bb0d0b3.stex" ]
+source_file="res://joc lluita/mapa assets/Clean-Full-Retro-Line-Tiles.png"
+dest_files=[ "res://.import/Clean-Full-Retro-Line-Tiles.png-7e6361ab986bc5c637e8c24bed817055.stex" ]
 
 [params]
 

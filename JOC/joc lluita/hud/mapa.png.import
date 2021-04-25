@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/samurai.png-31b6fd74c09e7a1440e1136a6bb0d0b3.stex"
+path="res://.import/mapa.png-1811dac2076fbfba8082d1622af67661.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://joc lluita/hud/samurai.png"
-dest_files=[ "res://.import/samurai.png-31b6fd74c09e7a1440e1136a6bb0d0b3.stex" ]
+source_file="res://joc lluita/hud/mapa.png"
+dest_files=[ "res://.import/mapa.png-1811dac2076fbfba8082d1622af67661.stex" ]
 
 [params]
 
