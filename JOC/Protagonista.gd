@@ -3,11 +3,10 @@ extends KinematicBody2D
 var animacio_inicial = false
 var velocitat : Vector2
 var salt_aeri = false
-var gravetat = 500
+var gravetat = 700
 var moviment = 150
-var salt = 400
+var salt = 500
 var segon_salt = 350
-
 
 func _ready():
 	$AnimacioInicial.start()
@@ -53,5 +52,5 @@ func _on_AnimacioInicial_timeout():
 	animacio_inicial = true
 
 
-func mal(quantitat):
+func mort(quantitat):
 	pass

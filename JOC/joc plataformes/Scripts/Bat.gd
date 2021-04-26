@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 var velocitat : Vector2
 var velocitat_max = 130
-var moviment = 10
+var moviment = 20
 var target : KinematicBody2D
 var target_no : KinematicBody2D
 
@@ -44,8 +44,8 @@ func _physics_process(delta):
 func anima(velocitat):
 	if velocitat != Vector2.ZERO:
 		$AnimatedSprite.play('Volar')
-	if not target and velocitat == Vector2.ZERO:
-		$AnimatedSprite.play('Enganchar')
+#	if not target and velocitat == Vector2.ZERO:
+#		$AnimatedSprite.play('Enganchar')
 	if velocitat == Vector2.ZERO:
 		$AnimatedSprite.play('Idle')
 	if velocitat.x > 0:
@@ -54,11 +54,11 @@ func anima(velocitat):
 		$AnimatedSprite.flip_h = false
 
 func _on_Vision_body_entered(body):
-	if body.has_method('mal'):
+	if body.has_method('mort'):
 		target = body
 
 func _on_Vision_body_exited(body):
-	if body.has_method('mal'):
+	if body.has_method('mort'):
 		target = target_no
 
 

@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 var velocitat : Vector2
-var gravetat = 500
+var gravetat = 700
 var target : KinematicBody2D
 var target_no : KinematicBody2D
 var mov_dreta = false
@@ -75,12 +75,12 @@ func _on_Caminar_timeout():
 
 
 func _on_Vision_body_entered(body):
-	if body.has_method('mal'):
+	if body.has_method('mort'):
 		target = body
 
 
 func _on_Vision_body_exited(body):
-	if body.has_method('mal'):
+	if body.has_method('mort'):
 		target = target_no
 
 
