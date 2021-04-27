@@ -10,6 +10,7 @@ var mort = false
 var atac = true
 var objectiu
 var aa=false
+var aaa=false
 func x():
 	pass
 func _ready():
@@ -26,8 +27,9 @@ func _physics_process(delta):
 		mort=true
 	if mort ==true:
 		mortj()
-		$mort.start()
-	if mort==false:
+	if aaa==true:
+		moviment.x=0
+	if mort==false && aaa==false:
 		if atacant==true:
 			if Input.is_action_pressed('dreta_lluita'):
 				moviment.x=velocitat2
@@ -74,16 +76,18 @@ func rep_mal():
 func atacar():
 	$espasa/CollisionShape2D.set_deferred('disabled',false)
 func mortj():
-	$AnimatedSprite.play('mort')
 	vida=400
 	moviment.y=0
-	position=Vector2(64,256)
+	if GlobalLluita.mapa==0:
+		position=Vector2(128,500)
+	if GlobalLluita.mapa==1:
+		position=Vector2(1472,620)
 	mort=false
 	gravetat=0
 	$espera.start()
 	vides-=1
+	aaa=true
 func _on_espera_timeout():
 	gravetat=670 # Replace with function body.
-	
-	
+	aaa=false
 

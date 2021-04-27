@@ -793,6 +793,7 @@
 
 [node name="StaticBody2D" type="StaticBody2D"]
 scale = Vector2( 2, 2 )
+z_as_relative = false
 
 [node name="prat" type="TileMap" parent="."]
 tile_set = SubResource( 1 )

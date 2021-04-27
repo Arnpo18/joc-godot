@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://joc lluita/hud/cavaller1.PNG" type="Texture" id=1]
 [ext_resource path="res://joc lluita/hud/j1.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://joc lluita/hud/x_selec.png" type="Texture" id=11]
 [ext_resource path="res://joc lluita/hud/x.PNG" type="Texture" id=12]
 [ext_resource path="res://joc lluita/menu_seleccio_lluita.gd" type="Script" id=13]
+[ext_resource path="res://joc lluita/hud/comença.png" type="Texture" id=14]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -48,7 +49,7 @@ margin_left = -24.0
 margin_top = -32.0
 margin_right = 16.0
 margin_bottom = 8.0
-color = Color( 0.286275, 0.321569, 0.329412, 1 )
+color = Color( 0.351746, 0.389948, 0.398438, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -401,7 +402,8 @@ margin_bottom = 1000.0
 texture_normal = ExtResource( 8 )
 
 [node name="Polygon2D" type="Polygon2D" parent="MarginContainer3/VBoxContainer/HBoxContainer/GridContainer/TextureButton"]
-polygon = PoolVector2Array( 13.3333, 1000, 1018.45, 1000.23, 1018.67, -26.6927, 0, -26.6667, 0, 986.667, 0, 986.667, 0, 986.667, 0, 986.667, 0, 986.667, -0.104248, 1000.05, 13.3333, 1000, 13.3333, 973.333, 19.9258, -0.441101, 999.204, 0.250061, 1000, 973.333, 13.3333, 986.667, 0, 986.667 )
+color = Color( 0.137255, 0.729412, 0.054902, 1 )
+polygon = PoolVector2Array( 0, 1000, 1000, 1000, 1000, 0, 0, 0, 0, 986.667, 13.3333, 986.667, 13.3333, 13.3333, 986.667, 13.3333, 986.667, 986.667, 0, 986.667 )
 
 [node name="TextureButton2" type="TextureButton" parent="MarginContainer3/VBoxContainer/HBoxContainer/GridContainer"]
 margin_top = 1004.0
@@ -409,7 +411,16 @@ margin_right = 1000.0
 margin_bottom = 2004.0
 texture_normal = ExtResource( 10 )
 
+[node name="Polygon2D" type="Polygon2D" parent="MarginContainer3/VBoxContainer/HBoxContainer/GridContainer/TextureButton2"]
+visible = false
+position = Vector2( 0, -4 )
+scale = Vector2( 1, 1.01333 )
+color = Color( 0.137255, 0.729412, 0.054902, 1 )
+polygon = PoolVector2Array( 0, 1000, 1000, 1000, 1000, 0, 0, 0, 0, 986.667, 13.3333, 986.667, 13.3333, 13.3333, 986.667, 13.3333, 986.667, 986.667, 0, 986.667 )
+
 [node name="j1" type="Sprite" parent="."]
+modulate = Color( 1, 0, 0, 1 )
+self_modulate = Color( 1, 0, 0, 1 )
 position = Vector2( 344, 240 )
 texture = ExtResource( 2 )
 
@@ -420,6 +431,24 @@ texture = ExtResource( 4 )
 [node name="mapa" type="Sprite" parent="."]
 position = Vector2( 960, 128 )
 texture = ExtResource( 6 )
+
+[node name="Button" type="TextureButton" parent="."]
+margin_left = 816.0
+margin_top = 892.0
+margin_right = 1137.0
+margin_bottom = 944.0
+texture_normal = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tj1" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="tj2" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/cavaller1" to="." method="_on_cavaller1_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/cavaller2" to="." method="_on_cavaller2_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/samurai" to="." method="_on_samurai_pressed"]
@@ -432,3 +461,8 @@ texture = ExtResource( 6 )
 [connection signal="pressed" from="MarginContainer2/VBoxContainer/HBoxContainer/GridContainer/piba_2" to="." method="_on_piba_2_pressed"]
 [connection signal="pressed" from="MarginContainer2/VBoxContainer/HBoxContainer/GridContainer/reina_2" to="." method="_on_reina_2_pressed"]
 [connection signal="pressed" from="MarginContainer2/VBoxContainer/HBoxContainer/GridContainer/x_2" to="." method="_on_x_2_pressed"]
+[connection signal="pressed" from="MarginContainer3/VBoxContainer/HBoxContainer/GridContainer/TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="MarginContainer3/VBoxContainer/HBoxContainer/GridContainer/TextureButton2" to="." method="_on_TextureButton2_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="timeout" from="tj1" to="." method="_on_tj1_timeout"]
+[connection signal="timeout" from="tj2" to="." method="_on_tj2_timeout"]
