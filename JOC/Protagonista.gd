@@ -39,6 +39,7 @@ func _physics_process(delta):
 		velocitat = move_and_slide(velocitat, Vector2.UP)
 		
 		anima(velocitat)
+		zona()
 
 func anima(velocitat):
 	if velocitat == Vector2.ZERO:
@@ -54,3 +55,9 @@ func _on_AnimacioInicial_timeout():
 
 func mal():
 	pass
+
+func zona():
+	if position.x > 0 and position.x < 1920:
+		$"/root/Global_Plataformes".mapa = 1
+	if position.x > 1920 and position.x < 3840:
+		$"/root/Global_Plataformes".mapa = 2
