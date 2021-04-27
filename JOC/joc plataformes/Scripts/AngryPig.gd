@@ -75,12 +75,12 @@ func _on_Caminar_timeout():
 
 
 func _on_Vision_body_entered(body):
-	if body.has_method('mort'):
+	if body.has_method('mal'):
 		target = body
 
 
 func _on_Vision_body_exited(body):
-	if body.has_method('mort'):
+	if body.has_method('mal'):
 		target = target_no
 
 

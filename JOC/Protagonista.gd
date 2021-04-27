@@ -52,5 +52,5 @@ func _on_AnimacioInicial_timeout():
 	animacio_inicial = true
 
 
-func mort(quantitat):
+func mal():
 	pass

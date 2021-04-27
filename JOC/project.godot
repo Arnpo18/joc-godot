@@ -18,6 +18,10 @@ _global_script_class_icons={
 config/name="Joc"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global_Plataformes="*res://joc plataformes/Scripts/Global_plataformes.gd"
+
 [display]
 
 window/size/width=1920
