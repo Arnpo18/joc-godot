@@ -6,11 +6,12 @@
 
 [node name="joc_plataformes" type="Node2D"]
 
+[node name="Mapa" parent="." instance=ExtResource( 2 )]
+
 [node name="Protagonista" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1771.29, 816.545 )
 
-[node name="Mapa" parent="." instance=ExtResource( 2 )]
-
-[node name="Enemics" type="Node2D" parent="Mapa"]
+[node name="Enemics" type="Node2D" parent="."]
+scale = Vector2( 5, 5 )
 
 [node name="CameraZona" parent="." instance=ExtResource( 1 )]

@@ -61,3 +61,5 @@ func zona():
 		$"/root/Global_Plataformes".mapa = 1
 	if position.x > 1920 and position.x < 3840:
 		$"/root/Global_Plataformes".mapa = 2
+	if position.x > 3840 and position.x < 5760:
+		$"/root/Global_Plataformes".mapa = 3
