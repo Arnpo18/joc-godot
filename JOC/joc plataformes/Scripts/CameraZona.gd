@@ -1,6 +1,6 @@
 extends Position2D
 
-var transition = false
+
 var Zona1 = Vector2(960, 540)
 var Zona2 = Zona1 + Vector2(1920, 0)
 var Zona3 = Zona2 + Vector2(1920, 0)

@@ -9,7 +9,7 @@
 [node name="Mapa" parent="." instance=ExtResource( 2 )]
 
 [node name="Protagonista" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1771.29, 816.545 )
+position = Vector2( 1865.29, 828.545 )
 
 [node name="Enemics" type="Node2D" parent="."]
 scale = Vector2( 5, 5 )
