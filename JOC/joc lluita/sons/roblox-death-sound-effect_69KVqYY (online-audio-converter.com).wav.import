@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/roblox-death-sound-effect_69KVqYY (online-audio-converter.com).wav-af8a921d003b2f9b970a6f333151328a.sample"
+
+[deps]
+
+source_file="res://joc lluita/sons/roblox-death-sound-effect_69KVqYY (online-audio-converter.com).wav"
+dest_files=[ "res://.import/roblox-death-sound-effect_69KVqYY (online-audio-converter.com).wav-af8a921d003b2f9b970a6f333151328a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

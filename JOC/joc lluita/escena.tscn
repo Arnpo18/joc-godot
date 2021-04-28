@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://joc lluita/personatges_escena/2.personatge.tscn" type="PackedScene" id=1]
 [ext_resource path="res://joc lluita/personatges_escena/1.personatge.tscn" type="PackedScene" id=2]
+[ext_resource path="res://joc lluita/mapa assets/Magic-Cliffs-Environment/magic cliffs music/magic cliffs.wav" type="AudioStream" id=3]
 [ext_resource path="res://joc lluita/Camera2D.tscn" type="PackedScene" id=4]
 [ext_resource path="res://joc lluita/menu_pausa_lluita.tscn" type="PackedScene" id=6]
 [ext_resource path="res://joc lluita/escena.gd" type="Script" id=9]
@@ -38,6 +39,11 @@ z_as_relative = false
 [node name="personatge2" parent="." instance=ExtResource( 1 )]
 z_index = 6
 z_as_relative = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -30.0
+autoplay = true
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://joc lluita/sons/roblox-death-sound-effect_69KVqYY (online-audio-converter.com).wav" type="AudioStream" id=1]
+
+[node name="mort" type="AudioStreamPlayer2D"]
+stream = ExtResource( 1 )

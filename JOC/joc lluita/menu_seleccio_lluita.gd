@@ -130,7 +130,9 @@ func _on_TextureButton2_pressed():
 
 func _on_Button_pressed():
 	if j1==true && j2 == true:
-		 get_tree().change_scene("res://joc lluita/escena.tscn")
+		$lst.start()
+		$link_starto.play()
+		$Button.disabled=true
 	if j1==false:
 		$j1.scale.x=1.5
 		$j1.scale.y=1.5
@@ -146,3 +148,7 @@ func _on_tj1_timeout():
 func _on_tj2_timeout():
 	$j2.scale.x=1
 	$j2.scale.y=1
+
+
+func _on_lst_timeout():
+	 get_tree().change_scene("res://joc lluita/escena.tscn") # Replace with function body.

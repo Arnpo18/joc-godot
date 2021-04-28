@@ -23,9 +23,10 @@ func _physics_process(delta):
 	moviment.x=0
 	if vida>0:
 		mort=false
+		
 	else:
 		mort=true
-	if mort ==true:
+		$mort.play()
 		mortj()
 	if aaa==true:
 		moviment.x=0
@@ -59,8 +60,10 @@ func _physics_process(delta):
 				atacant=true
 				$cooldown.start()
 				atacar()
+				$so_espasa.play()
 			if Input.is_action_just_pressed('atac2_lluita'):
 				$AnimatedSprite.play('atac2')
+				$so_espasa.play()
 				atacant=true
 				$cooldown.start()
 				atacar()
@@ -87,6 +90,7 @@ func mortj():
 	$espera.start()
 	vides-=1
 	aaa=true
+	
 func _on_espera_timeout():
 	gravetat=670 # Replace with function body.
 	aaa=false
