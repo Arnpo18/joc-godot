@@ -9,8 +9,8 @@ var Enemics_Zona3 = false
 var Enemics_Zona4 = false
 var Enemics_Zona5 = false
 
-func _ready():
-	pass
+#func _ready():
+#	pass
 
 
 
