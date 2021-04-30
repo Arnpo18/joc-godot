@@ -11,12 +11,14 @@ var atac = true
 var objectiu
 var aa=false
 var aaa=false
+var nova_vida
 func x():
 	pass
 func _ready():
 	pass 
 
 func _physics_process(delta):
+	
 	$TextureProgress.value = vida
 	$espasa/CollisionShape2D.set_deferred('disabled',true)
 	moviment.y+=gravetat*delta
