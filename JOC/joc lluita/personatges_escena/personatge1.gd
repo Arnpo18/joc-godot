@@ -83,10 +83,8 @@ func atacar():
 func mortj():
 	vida=400
 	moviment.y=0
-	if GlobalLluita.mapa==0:
-		position=Vector2(128,500)
-	if GlobalLluita.mapa==1:
-		position=Vector2(1472,620)
+	position=Vector2(128,500)
+
 	mort=false
 	gravetat=0
 	$espera.start()

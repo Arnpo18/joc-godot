@@ -3,7 +3,7 @@ var j1=false
 var j2=false
 
 func _ready():
-	GlobalLluita.mapa=0
+	pass
 func _process(delta):
  pass
 func _on_cavaller1_pressed():
@@ -116,16 +116,6 @@ func _on_x_2_pressed():
 	$MarginContainer2/VBoxContainer/HBoxContainer/GridContainer/reina_2/Polygon2D.hide()
 #########################################################################################################################################
 
-
-func _on_TextureButton_pressed():
-	$MarginContainer3/VBoxContainer/HBoxContainer/GridContainer/TextureButton/Polygon2D.show()
-	$MarginContainer3/VBoxContainer/HBoxContainer/GridContainer/TextureButton2/Polygon2D.hide() # Replace with function body.
-	GlobalLluita.mapa=0
-
-func _on_TextureButton2_pressed():
-	$MarginContainer3/VBoxContainer/HBoxContainer/GridContainer/TextureButton/Polygon2D.hide()
-	$MarginContainer3/VBoxContainer/HBoxContainer/GridContainer/TextureButton2/Polygon2D.show() # Replace with function body.
-	GlobalLluita.mapa=1
 
 
 func _on_Button_pressed():

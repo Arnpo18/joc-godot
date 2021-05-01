@@ -9,7 +9,7 @@ var ansp2
 var map
 
 func _ready():
-	map = load(mapa[GlobalLluita.mapa])
+	map = load("res://joc lluita/mapes/mapa1.tscn")
 	map = map.instance()
 	self.add_child(map)
 	ansp1 = load(ansp[GlobalLluita.personatge1])
@@ -18,12 +18,8 @@ func _ready():
 	ansp2 = load(ansp[GlobalLluita.personatge2])
 	ansp2=ansp2	.instance()
 	$personatge2.add_child(ansp2)
-	if GlobalLluita.mapa == 0:
-		$personatge1.position=Vector2(128,576)
-		$personatge2.position=Vector2(1472,570)
-	else:
-		$personatge1.position=Vector2(512,520)
-		$personatge2.position=Vector2(2304,660)
+	$personatge1.position=Vector2(128,576)
+	$personatge2.position=Vector2(1250,520)
 	$Camera2D.add_target($personatge1)
 	$Camera2D.add_target($personatge2)
 	
