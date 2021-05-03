@@ -1,5 +1,6 @@
 extends Area2D
 const bala = preload("res://joc tower defense/torres/bala.tscn")
+const bala2 = preload("res://joc tower defense/torres/bala_2.tscn")
 var enemics = []
 var target_actual=null
 var dispar = true
@@ -18,7 +19,11 @@ func _process(delta):
 			var ball=bala.instance()
 			ball.set_target(target_actual)
 			$arma.add_child(ball)
-			$arma/foc.show()
+			var ball2=bala2.instance()
+			ball2.set_target(target_actual)
+			$arma.add_child(ball2)
+			$arma/foc_1.show()
+			$arma/foc_2.show()
 			$animacio_foc.start()
 			dispar = false
 			$timer_dispar.start()
@@ -29,7 +34,7 @@ func enemic_proper():
 	if enemics.size()>0:
 		for enemic in enemics:
 			distancies.append((enemic.position-position))
-		var minim = distancies.max()
+		var minim = distancies.min()
 		var ind_minim = distancies.find(minim)
 		target_actual = enemics[ind_minim]
 	else: 
@@ -37,4 +42,6 @@ func enemic_proper():
 func _on_timer_dispar_timeout():
 	dispar = true # Replace with function body.
 func _on_animacio_foc_timeout():
-	$arma/foc.hide()# Replace with function body.
+	$arma/foc_1.hide()
+	$arma/foc_2.hide()
+

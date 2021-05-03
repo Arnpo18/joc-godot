@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://joc tower defense/mapa/mapa.tscn" type="PackedScene" id=1]
 [ext_resource path="res://joc tower defense/assets/Tilesheet/towerDefense_tilesheet.png" type="Texture" id=2]
-[ext_resource path="res://joc tower defense/torres/torre_1(tanc).tscn" type="PackedScene" id=3]
-[ext_resource path="res://joc tower defense/enemics/enemic_1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://joc tower defense/torres/torre_2(tanc).tscn" type="PackedScene" id=3]
+[ext_resource path="res://joc tower defense/enemics/tanc_enemic_1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://joc tower defense/torres/torre_1(tanc).tscn" type="PackedScene" id=5]
 
 [sub_resource type="TileSet" id=1]
 0/name = "towerDefense_tilesheet.png 0"
@@ -219,7 +220,7 @@
 
 [sub_resource type="Curve2D" id=2]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -136, 320, 0, 0, 0, 0, 576, 320, 0, 0, 0, 0, 576, 768, 0, 0, 0, 0, 1280, 768, 0, 0, 0, 0, 1280, 192, 0, 0, 0, 0, 1664, 192, 0, 0, 0, 0, 1664, 576, 0, 0, 0, 0, 1952, 576 )
+"points": PoolVector2Array( 0, 0, 0, 0, 200, -192, 0, 0, 0, 0, 192, 512, 0, 0, 0, 0, 512, 512, 0, 0, 0, 0, 512, 896, 0, 0, 0, 0, 1408, 904, 0, 0, 0, 0, 1408, 512, 0, 0, 0, 0, 1728, 512, 0, 0, 0, 0, 1728, -56 )
 }
 
 [node name="Node" type="Node"]
@@ -229,14 +230,17 @@ _data = {
 [node name="posicions" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
 format = 1
-tile_data = PoolIntArray( 18, 9, 0, 65562, 12, 0, 131073, 14, 0, 131075, 14, 0, 131077, 14, 0, 131079, 14, 0, 131081, 14, 0, 131083, 12, 0, 131084, 14, 0, 131088, 14, 0, 196622, 12, 0, 262156, 14, 0, 262160, 14, 0, 327709, 12, 0, 393228, 14, 0, 393232, 14, 0, 393238, 14, 0, 393239, 14, 0, 393244, 11, 0, 458753, 14, 0, 458755, 14, 0, 458757, 14, 0, 524300, 14, 0, 524302, 14, 0, 524304, 14, 0, 524310, 14, 0, 524311, 14, 0, 589830, 14, 0, 589840, 9, 0, 655382, 14, 0, 655383, 14, 0, 720899, 7, 0, 720900, 4, 0, 720902, 14, 0, 786436, 5, 0, 786454, 14, 0, 786455, 14, 0, 786458, 9, 0, 786459, 5, 0, 851974, 14, 0, 851992, 10, 0, 851995, 8, 0, 917514, 10, 0, 917515, 14, 0, 917518, 14, 0, 917521, 14, 0, 983049, 12, 0, 983065, 9, 0, 1048597, 12, 0 )
+tile_data = PoolIntArray( 18, 9, 0, 65541, 14, 0, 65560, 14, 0, 65562, 12, 0, 131078, 14, 0, 131083, 12, 0, 131095, 14, 0, 196613, 14, 0, 196622, 12, 0, 196632, 14, 0, 262150, 14, 0, 262167, 14, 0, 327685, 14, 0, 327690, 14, 0, 327699, 14, 0, 327704, 14, 0, 327709, 12, 0, 393227, 14, 0, 393234, 14, 0, 393244, 11, 0, 524298, 14, 0, 524301, 14, 0, 524304, 14, 0, 524307, 14, 0, 589835, 14, 0, 589836, 14, 0, 589840, 9, 0, 589841, 14, 0, 589842, 14, 0, 655362, 14, 0, 655365, 14, 0, 655371, 14, 0, 655372, 14, 0, 655377, 14, 0, 655378, 14, 0, 655384, 14, 0, 655387, 14, 0, 720899, 7, 0, 720900, 4, 0, 720906, 14, 0, 720909, 14, 0, 720912, 14, 0, 720915, 14, 0, 786436, 5, 0, 786458, 9, 0, 786459, 5, 0, 851973, 14, 0, 851992, 14, 0, 851995, 8, 0, 917514, 10, 0, 983049, 12, 0, 983065, 9, 0, 1048597, 12, 0 )
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource( 2 )
 
 [node name="enemic_1" parent="Path2D" instance=ExtResource( 4 )]
-position = Vector2( 18.1592, 320 )
-offset = 153.88
+position = Vector2( 200, -192 )
+rotation = 1.58216
 
-[node name="tanc_1" parent="." instance=ExtResource( 3 )]
-position = Vector2( 224, 480 )
+[node name="tanc_1" parent="." instance=ExtResource( 5 )]
+position = Vector2( 352, 224 )
+
+[node name="tanc_2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 416, 288 )

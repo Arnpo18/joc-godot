@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://joc tower defense/assets/Tilesheet/towerDefense_tilesheet.png" type="Texture" id=1]
-[ext_resource path="res://joc tower defense/enemics/enemic1.gd" type="Script" id=2]
+[ext_resource path="res://joc tower defense/enemics/enemic_2.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 24.0
@@ -19,5 +19,5 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 960, 640, 64, 64 )
+region_rect = Rect2( 1152, 640, 64, 64 )
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
