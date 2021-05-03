@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=2]
+[gd_scene load_steps=70 format=2]
 
 [ext_resource path="res://Protagonista.gd" type="Script" id=1]
 [ext_resource path="res://joc plataformes/Assets plataformes/Main Characters/Ninja Frog/Jump (32x32).png" type="Texture" id=2]
@@ -257,11 +257,6 @@ animations = [ {
 "name": "Disappearing",
 "speed": 20.0
 }, {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "Fall",
-"speed": 20.0
-}, {
 "frames": [ SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ) ],
 "loop": false,
 "name": "Appearing",
@@ -277,6 +272,11 @@ animations = [ {
 "name": "Wall Jump",
 "speed": 20.0
 }, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "Fall",
+"speed": 20.0
+}, {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "Jump",
@@ -285,6 +285,9 @@ animations = [ {
 
 [sub_resource type="RectangleShape2D" id=58]
 extents = Vector2( 9.09973, 10.6191 )
+
+[sub_resource type="RectangleShape2D" id=59]
+extents = Vector2( 7.99303, 9.42072 )
 
 [node name="Protagonista" type="KinematicBody2D"]
 scale = Vector2( 3, 3 )
@@ -301,4 +304,11 @@ shape = SubResource( 58 )
 [node name="AnimacioInicial" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+
+[node name="Mort" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mort"]
+position = Vector2( 0, 4 )
+shape = SubResource( 59 )
 [connection signal="timeout" from="AnimacioInicial" to="." method="_on_AnimacioInicial_timeout"]
+[connection signal="body_entered" from="Mort" to="." method="_on_Mort_body_entered"]

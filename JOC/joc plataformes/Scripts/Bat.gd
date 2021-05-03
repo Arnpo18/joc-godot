@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 var velocitat : Vector2
-var velocitat_max = 130
+var velocitat_max = 170
 var moviment = 20
 var target : KinematicBody2D
 var target_no : KinematicBody2D

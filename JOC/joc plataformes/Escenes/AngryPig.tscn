@@ -252,6 +252,7 @@ shape = SubResource( 50 )
 wait_time = 3.0
 
 [node name="Normal" type="Timer" parent="."]
+wait_time = 0.5
 one_shot = true
 [connection signal="body_entered" from="Vision" to="." method="_on_Vision_body_entered"]
 [connection signal="body_exited" from="Vision" to="." method="_on_Vision_body_exited"]

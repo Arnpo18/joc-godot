@@ -54,7 +54,7 @@ func _on_AnimacioInicial_timeout():
 
 
 func mal():
-	pass
+	queue_free()
 
 func zona():
 	if position.x > 0 and position.x < 1920:
@@ -65,3 +65,10 @@ func zona():
 		$"/root/Global_Plataformes".mapa = 3
 	if position.x > 5760 and position.x < 7680:
 		$"/root/Global_Plataformes".mapa = 4
+
+
+func _on_Mort_body_entered(body):
+	print('ha entrat')
+	print(body.collision_layer)
+	if body.collision_layer == 2:
+		mal()
