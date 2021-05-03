@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://joc plataformes/Escenes/CameraZona.tscn" type="PackedScene" id=1]
+[ext_resource path="res://joc plataformes/Escenes/Mapa.tscn" type="PackedScene" id=2]
+[ext_resource path="res://joc plataformes/Escenes/Protagonista.tscn" type="PackedScene" id=3]
+[ext_resource path="res://joc plataformes/Scripts/Enemics.gd" type="Script" id=4]
+
+[node name="joc_plataformes" type="Node2D"]
+
+[node name="Mapa" parent="." instance=ExtResource( 2 )]
+
+[node name="Protagonista" parent="." instance=ExtResource( 3 )]
+position = Vector2( 162.035, 900.626 )
+
+[node name="Enemics" type="Node2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="CameraZona" parent="." instance=ExtResource( 1 )]
