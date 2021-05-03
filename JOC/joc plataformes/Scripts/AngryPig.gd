@@ -16,7 +16,6 @@ func _ready():
 
 
 func _physics_process(delta):
-	
 	if cam_enfadat == true:
 		pass
 	elif target:

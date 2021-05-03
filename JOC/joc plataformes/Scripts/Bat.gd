@@ -12,7 +12,6 @@ func _ready():
 
 
 func _physics_process(delta):
-	
 	if target:
 		if target.position.x > position.x:
 			velocitat.x += moviment*delta*10
