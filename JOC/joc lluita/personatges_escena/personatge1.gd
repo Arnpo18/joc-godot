@@ -83,7 +83,8 @@ func atacar():
 func mortj():
 	vida=400
 	moviment.y=0
-	position=Vector2(128,500)
+	position=Vector2(32,368)
+	
 
 	mort=false
 	gravetat=0

@@ -1,11 +1,16 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://joc lluita/personatges_escena/2.personatge.tscn" type="PackedScene" id=1]
 [ext_resource path="res://joc lluita/personatges_escena/1.personatge.tscn" type="PackedScene" id=2]
-[ext_resource path="res://joc lluita/hud/j1.png" type="Texture" id=3]
+[ext_resource path="res://joc lluita/Cool Text - JUGADOR 1 GUANYA 381386853516438.png" type="Texture" id=3]
 [ext_resource path="res://joc lluita/Camera2D.tscn" type="PackedScene" id=4]
+[ext_resource path="res://joc lluita/mapes/mapa1.tscn" type="PackedScene" id=5]
 [ext_resource path="res://joc lluita/menu_pausa_lluita.tscn" type="PackedScene" id=6]
+[ext_resource path="res://joc lluita/hud/j1.png" type="Texture" id=7]
+[ext_resource path="res://joc lluita/hud/corason.png" type="Texture" id=8]
 [ext_resource path="res://joc lluita/escena.gd" type="Script" id=9]
+[ext_resource path="res://joc lluita/hud/j2.png" type="Texture" id=10]
+[ext_resource path="res://joc lluita/Cool Text - JUGADOR 2 GUANYA 381386872771570.png" type="Texture" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1840, 10 )
@@ -33,16 +38,77 @@ position = Vector2( 640, 952 )
 shape = SubResource( 1 )
 
 [node name="personatge1" parent="." instance=ExtResource( 2 )]
+position = Vector2( 32, 368 )
 z_index = 5
 z_as_relative = false
 
 [node name="personatge2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1656, 464 )
 z_index = 6
 z_as_relative = false
 
-[node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.4, 0.4 )
+[node name="vj1" type="Sprite" parent="."]
+visible = false
+position = Vector2( 960, 450 )
+scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 3 )
+
+[node name="vj2" type="Sprite" parent="."]
+visible = false
+position = Vector2( 960, 450 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 11 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Timer3" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="StaticBody2D" parent="." instance=ExtResource( 5 )]
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="jugador1" type="Sprite" parent="CanvasLayer2"]
+position = Vector2( 88, 24 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 7 )
+
+[node name="vida1" type="Sprite" parent="CanvasLayer2/jugador1"]
+position = Vector2( -146.667, 80 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+
+[node name="vida2" type="Sprite" parent="CanvasLayer2/jugador1"]
+position = Vector2( -59.9999, 80 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+
+[node name="vida3" type="Sprite" parent="CanvasLayer2/jugador1"]
+position = Vector2( 20, 80 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+
+[node name="jugador2" type="Sprite" parent="CanvasLayer2"]
+position = Vector2( 1840, 24 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 10 )
+
+[node name="vida1" type="Sprite" parent="CanvasLayer2/jugador2"]
+position = Vector2( -146.667, 80 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+
+[node name="vida2" type="Sprite" parent="CanvasLayer2/jugador2"]
+position = Vector2( -59.9999, 80 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+
+[node name="vida3" type="Sprite" parent="CanvasLayer2/jugador2"]
+position = Vector2( 20, 80 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="timeout" from="Timer3" to="." method="_on_Timer3_timeout"]

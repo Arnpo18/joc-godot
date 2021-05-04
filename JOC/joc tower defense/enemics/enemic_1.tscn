@@ -4,11 +4,12 @@
 [ext_resource path="res://joc tower defense/enemics/enemic1.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 24.0
+radius = 26.2101
 
 [node name="enemic_1" type="PathFollow2D" groups=[
 "enemic",
 ]]
+scale = Vector2( 1.5, 1.5 )
 script = ExtResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="."]

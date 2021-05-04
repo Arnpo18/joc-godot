@@ -10,6 +10,7 @@ radius = 35.7771
 radius = 400.0
 
 [node name="tanc_1" type="Area2D"]
+scale = Vector2( 1.5, 1.5 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -33,6 +34,7 @@ __meta__ = {
 }
 
 [node name="foc" type="Sprite" parent="arma"]
+visible = false
 position = Vector2( -0.000178655, -40 )
 rotation = -4.46638e-06
 texture = ExtResource( 1 )

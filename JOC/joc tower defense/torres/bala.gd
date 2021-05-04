@@ -1,7 +1,7 @@
 extends Area2D
 var target=null
-var velocitat = 1600
-var steer_force = 300.0
+var velocitat = 20000
+var steer_force = 500.0
 var moviment = Vector2.ZERO
 var acceleracio = Vector2.ZERO 
 

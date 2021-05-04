@@ -9,6 +9,7 @@ radius = 32.0
 [node name="enemic_1" type="PathFollow2D" groups=[
 "enemic",
 ]]
+scale = Vector2( 2, 2 )
 script = ExtResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -19,10 +20,10 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 1024, 704, 64, 64 )
+region_rect = Rect2( 960, 704, 64, 64 )
 
 [node name="Sprite2" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 1024, 768, 64, 64 )
+region_rect = Rect2( 960, 768, 64, 64 )
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]

@@ -82,7 +82,7 @@ func atacar():
 func mortj():
 	vida=400
 	moviment.y=0
-	position=Vector2(1536,464)
+	position=Vector2(1656,464)
 	mort=false
 	gravetat=0
 	$espera.start()
