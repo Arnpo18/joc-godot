@@ -135,3 +135,4 @@ region_rect = Rect2( 704, 768, 64, 64 )
 [connection signal="pressed" from="." to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="Popup/GridContainer/TextureButtona" to="." method="_on_TextureButtona_pressed"]
 [connection signal="pressed" from="Popup/GridContainer/TextureButton2" to="." method="_on_TextureButton2_pressed"]
+[connection signal="pressed" from="Popup/GridContainer/TextureButton3" to="." method="_on_TextureButton3_pressed"]

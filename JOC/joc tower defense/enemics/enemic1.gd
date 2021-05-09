@@ -20,3 +20,6 @@ func _on_Area2D_area_entered(area):
 	if area.is_in_group('bala'):
 		vida -= 1
 		area.queue_free()
+	if area.is_in_group('míssil'):
+		vida -= 3
+		area.queue_free()

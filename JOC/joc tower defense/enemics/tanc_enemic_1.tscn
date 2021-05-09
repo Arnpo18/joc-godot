@@ -26,4 +26,13 @@ region_rect = Rect2( 960, 704, 64, 64 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 960, 768, 64, 64 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -20.0
+margin_top = -36.0
+margin_right = 20.0
+margin_bottom = -22.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]

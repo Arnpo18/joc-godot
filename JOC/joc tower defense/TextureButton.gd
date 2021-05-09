@@ -31,3 +31,10 @@ func _on_TextureButton2_pressed():
 	tanc.global_position=rect_global_position+Vector2(32,32)
 	get_parent().add_child(tanc)
 	queue_free() # Replace with function body.
+
+
+func _on_TextureButton3_pressed():
+	var llm=missils_1.instance()
+	llm.global_position=rect_global_position+Vector2(32,32)
+	get_parent().add_child(llm)
+	queue_free() # Replace with function body.
