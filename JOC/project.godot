@@ -21,6 +21,7 @@ config/icon="res://icon.png"
 [autoload]
 
 GlobalLluita="*res://joc lluita/global_lluita.gd"
+GlobalTd="*res://joc tower defense/global_td.gd"
 
 [display]
 

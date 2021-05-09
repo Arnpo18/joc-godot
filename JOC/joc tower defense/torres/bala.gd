@@ -1,7 +1,7 @@
 extends Area2D
 var target=null
 var velocitat = 20000
-var steer_force = 500.0
+var steer_force = 100.0
 var moviment = Vector2.ZERO
 var acceleracio = Vector2.ZERO 
 
@@ -13,7 +13,7 @@ func seek():
 		steer = (desired-moviment).normalized()*steer_force
 	return steer	
 func _process(delta):
-	acceleracio+=seek()
+	acceleracio+=seek()*8
 	moviment+=acceleracio*delta
 	moviment = moviment.clamped(velocitat)
 	rotation=moviment.angle()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://joc tower defense/assets/torre1.png" type="Texture" id=1]
 [ext_resource path="res://joc tower defense/assets/towerDefense_tilesheet.png" type="Texture" id=2]
@@ -6,10 +6,13 @@
 [ext_resource path="res://joc tower defense/assets/torre2.png" type="Texture" id=4]
 [ext_resource path="res://joc tower defense/assets/llença_míssils_1.png" type="Texture" id=5]
 [ext_resource path="res://joc tower defense/TextureButton.gd" type="Script" id=6]
+[ext_resource path="res://joc tower defense/assets/Tilesheet/towerDefense_tilesheet.png" type="Texture" id=7]
 
 [node name="TextureButton" type="TextureButton"]
-margin_right = 64.0
-margin_bottom = 64.0
+margin_left = -64.0
+margin_top = -64.0
+margin_right = -2.0
+margin_bottom = -1.0
 rect_scale = Vector2( 1.04, 1.02 )
 action_mode = 0
 texture_normal = ExtResource( 2 )
@@ -21,52 +24,114 @@ __meta__ = {
 
 [node name="Popup" type="Popup" parent="."]
 visible = true
-margin_top = 62.7451
-margin_right = 40.0
-margin_bottom = 102.745
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Popup"]
-margin_left = -123.077
-margin_top = 86.2745
-margin_right = 563.923
-margin_bottom = 253.274
-rect_scale = Vector2( 0.5, 0.5 )
+anchor_left = -0.372
+anchor_top = 0.622
+anchor_right = 2.233
+anchor_bottom = 2.739
+margin_left = -38.936
+margin_top = 23.814
+margin_right = -7.446
+margin_bottom = 86.443
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureButtona" type="TextureButton" parent="Popup/HBoxContainer"]
-margin_right = 170.0
-margin_bottom = 167.0
+[node name="GridContainer" type="GridContainer" parent="Popup"]
+margin_left = 8.15385
+margin_top = 7.58823
+margin_right = 366.154
+margin_bottom = 360.588
+rect_scale = Vector2( 0.5, 0.5 )
+custom_constants/vseparation = 20
+custom_constants/hseparation = 20
+columns = 2
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Polygon2D" type="Polygon2D" parent="Popup/GridContainer"]
+position = Vector2( 0.615402, -88.9978 )
+scale = Vector2( 2, 1.85185 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( -8.00002, 38.9608, -8.00002, 242.882, 176.615, 242.882, 184.308, 242.882, 184.308, 31.1176, -8.00002, 31.1176 )
+
+[node name="TextureButtona" type="TextureButton" parent="Popup/GridContainer"]
+margin_right = 168.0
+margin_bottom = 166.0
 action_mode = 0
 texture_normal = ExtResource( 1 )
+expand = true
 
-[node name="TextureButton2" type="TextureButton" parent="Popup/HBoxContainer"]
-margin_left = 174.0
-margin_right = 344.0
-margin_bottom = 167.0
+[node name="TextureButton2" type="TextureButton" parent="Popup/GridContainer"]
+margin_left = 188.0
+margin_right = 358.0
+margin_bottom = 166.0
 texture_normal = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureButton3" type="TextureButton" parent="Popup/HBoxContainer"]
-margin_left = 348.0
-margin_right = 516.0
-margin_bottom = 167.0
+[node name="TextureButton3" type="TextureButton" parent="Popup/GridContainer"]
+margin_top = 186.0
+margin_right = 168.0
+margin_bottom = 353.0
 texture_normal = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureButton4" type="TextureButton" parent="Popup/HBoxContainer"]
-margin_left = 520.0
-margin_right = 687.0
-margin_bottom = 167.0
+[node name="TextureButton4" type="TextureButton" parent="Popup/GridContainer"]
+margin_left = 188.0
+margin_top = 186.0
+margin_right = 358.0
+margin_bottom = 353.0
 texture_normal = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="1" type="Sprite" parent="Popup/GridContainer"]
+position = Vector2( 46.1539, 109.804 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 64, 768, 64, 64 )
+
+[node name="0" type="Sprite" parent="Popup/GridContainer"]
+position = Vector2( 76.9231, 109.804 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 0, 768, 64, 64 )
+
+[node name="$" type="Sprite" parent="Popup/GridContainer"]
+position = Vector2( 123.077, 109.804 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 704, 768, 64, 64 )
+
+[node name="2" type="Sprite" parent="Popup/GridContainer"]
+position = Vector2( 237.638, 109.415 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 128, 768, 64, 64 )
+
+[node name="02" type="Sprite" parent="Popup/GridContainer"]
+position = Vector2( 276.923, 109.804 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 0, 768, 64, 64 )
+
+[node name="0$" type="Sprite" parent="Popup/GridContainer"]
+position = Vector2( 323.077, 109.804 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 704, 768, 64, 64 )
 [connection signal="pressed" from="." to="." method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="Popup/HBoxContainer/TextureButtona" to="." method="_on_TextureButtona_pressed"]
-[connection signal="pressed" from="Popup/HBoxContainer/TextureButton2" to="." method="_on_TextureButton2_pressed"]
+[connection signal="pressed" from="Popup/GridContainer/TextureButtona" to="." method="_on_TextureButtona_pressed"]
+[connection signal="pressed" from="Popup/GridContainer/TextureButton2" to="." method="_on_TextureButton2_pressed"]

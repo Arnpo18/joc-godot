@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://joc tower defense/assets/Tilesheet/towerDefense_tilesheet.png" type="Texture" id=1]
 [ext_resource path="res://joc tower defense/enemics/enemic1.gd" type="Script" id=2]
+[ext_resource path="res://joc tower defense/assets/Dosis-VariableFont_wght.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 26.2101
+radius = 30.4275
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 3 )
 
 [node name="enemic_1" type="PathFollow2D" groups=[
 "enemic",
@@ -21,4 +26,14 @@ shape = SubResource( 1 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 960, 640, 64, 64 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -19.799
+margin_top = -40.5407
+margin_right = 20.201
+margin_bottom = -26.5407
+custom_fonts/font = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]

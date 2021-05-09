@@ -10,6 +10,7 @@ func _process(delta):
 		final()
 	if vida == 0:
 		final()
+		GlobalTd.diners+=5
 func final():
 	queue_free()
 

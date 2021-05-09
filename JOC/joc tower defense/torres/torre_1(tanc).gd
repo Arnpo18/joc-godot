@@ -18,6 +18,7 @@ func _process(delta):
 		if dispar== true:
 			var ball=bala.instance()
 			ball.set_target(target_actual)
+			ball.global_position=$arma.global_position
 			add_child(ball)
 			$arma/foc.show()
 			$animacio_foc.start()
@@ -43,4 +44,6 @@ func _on_animacio_foc_timeout():
 func rotacio():
 		var juan = target_actual.global_position - global_position
 		var selona = atan2(juan.y,juan.x)
-		$arma.rotation = selona + PI/2
+		$arma.rotation = (selona + PI/2) 
+		
+		

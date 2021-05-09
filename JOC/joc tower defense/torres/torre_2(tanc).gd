@@ -35,7 +35,7 @@ func enemic_proper():
 	if enemics.size()>0:
 		for enemic in enemics:
 			distancies.append((enemic.position-position))
-		var minim = distancies.min()
+		var minim = distancies.max()
 		var ind_minim = distancies.find(minim)
 		target_actual = enemics[ind_minim]
 	else: 

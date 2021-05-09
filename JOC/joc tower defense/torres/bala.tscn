@@ -4,6 +4,7 @@
 [ext_resource path="res://joc tower defense/torres/bala.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
+radius = 16.5469
 
 [node name="bala" type="Area2D" groups=[
 "bala",

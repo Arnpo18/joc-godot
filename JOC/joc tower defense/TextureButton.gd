@@ -12,7 +12,7 @@ func _process(delta):
 	pass
 func _on_TextureButton_pressed():
 	if pop == false:
-		$Popup.popup(Rect2(rect_position, $Popup/HBoxContainer.rect_size))
+		$Popup.popup(Rect2(rect_position-Vector2(64,-64), $Popup/GridContainer.rect_size))
 		pop = true
 	elif pop == true:
 		pop=false
@@ -20,14 +20,14 @@ func _on_TextureButton_pressed():
 
 func _on_TextureButtona_pressed():
 	var tanc=cano_1.instance()
-	tanc.global_position=rect_global_position
+	tanc.global_position=rect_global_position+Vector2(32,32)
 	get_parent().add_child(tanc)
 	queue_free()
 	 # Replace with function body.
 
 
 func _on_TextureButton2_pressed():
-	var tanc=cano_1.instance()
-	tanc.global_position=rect_global_position
+	var tanc=cano_2.instance()
+	tanc.global_position=rect_global_position+Vector2(32,32)
 	get_parent().add_child(tanc)
 	queue_free() # Replace with function body.
