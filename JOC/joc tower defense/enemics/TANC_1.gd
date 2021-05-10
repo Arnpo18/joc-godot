@@ -1,6 +1,6 @@
 extends PathFollow2D
 var velocitat=60
-var vida = 25
+var vida = 60
 func _ready():
 	pass
 	 
@@ -11,10 +11,10 @@ func _process(delta):
 		final()
 	if vida <= 0:
 		final()
-		GlobalTd.diners+=10
+		
 func final():
 	queue_free()
-
+	GlobalTd.diners+=10
 
 func _on_Area2D_area_entered(area):
 	if area.is_in_group('bala'):

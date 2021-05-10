@@ -1,6 +1,6 @@
 extends PathFollow2D
 var velocitat=100
-var vida = 5
+var vida = 10
 func _ready():
 	pass
 	 

@@ -60,11 +60,12 @@ position = Vector2( 0, 8 )
 shape = SubResource( 2 )
 
 [node name="timer_dispar" type="Timer" parent="."]
+wait_time = 0.5
 
 [node name="Tween" type="Tween" parent="."]
 
 [node name="animacio_foc" type="Timer" parent="."]
-wait_time = 0.408
+wait_time = 0.5
 one_shot = true
 [connection signal="area_entered" from="rang" to="." method="_on_rang_area_entered"]
 [connection signal="area_exited" from="rang" to="." method="_on_rang_area_exited"]
