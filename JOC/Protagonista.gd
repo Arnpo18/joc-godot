@@ -1,19 +1,29 @@
 extends KinematicBody2D
 
 var animacio_inicial = false
+var animacio_final = false
+
 var velocitat : Vector2
 var salt_aeri = false
-var gravetat = 700
+var gravetat = 1000
 var moviment = 150
-var salt = 500
-var segon_salt = 350
+var salt = 600
+var segon_salt = 550
 
 func _ready():
 	$AnimacioInicial.start()
 	$AnimatedSprite.play('Appearing')
 
+#	print(collision_layer)
+#	print(collision_mask)
+
 func _physics_process(delta):
-	if animacio_inicial == true:
+	if animacio_inicial == true and animacio_final == false:
+		# Caiguda
+		if position.y > 1200:
+			mal()
+		
+		
 		# Moviment del jugador
 		velocitat.x = 0
 		if Input.is_action_pressed("dreta_plataformes"):
@@ -40,6 +50,9 @@ func _physics_process(delta):
 		
 		anima(velocitat)
 		zona()
+	
+	if Input.is_action_just_pressed("ui_accept"):
+		mal()
 
 func anima(velocitat):
 	if velocitat == Vector2.ZERO:
@@ -54,7 +67,10 @@ func _on_AnimacioInicial_timeout():
 
 
 func mal():
-	queue_free()
+#	$"/root/Global_Plataformes".respawn = true
+	animacio_final = true
+	$AnimatedSprite.play('Disappearing')
+	$AnimacioFinal.start()
 
 func zona():
 	if position.x > 0 and position.x < 1920:
@@ -72,3 +88,8 @@ func _on_Mort_body_entered(body):
 	print(body.collision_layer)
 	if body.collision_layer == 2:
 		mal()
+
+
+
+func _on_AnimacioFinal_timeout():
+	$"/root/Global_Plataformes".respawn = true

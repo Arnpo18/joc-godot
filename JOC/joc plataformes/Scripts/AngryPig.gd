@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 var velocitat : Vector2
-var gravetat = 700
+var gravetat = 1000
 var target : KinematicBody2D
 var target_no : KinematicBody2D
 var mov_dreta = false
