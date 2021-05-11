@@ -19,10 +19,10 @@ func _ready():
 
 func _physics_process(delta):
 	if animacio_inicial == true and animacio_final == false:
+		
 		# Caiguda
 		if position.y > 1200:
 			mal()
-		
 		
 		# Moviment del jugador
 		velocitat.x = 0
@@ -67,7 +67,6 @@ func _on_AnimacioInicial_timeout():
 
 
 func mal():
-#	$"/root/Global_Plataformes".respawn = true
 	animacio_final = true
 	$AnimatedSprite.play('Disappearing')
 	$AnimacioFinal.start()
@@ -86,8 +85,11 @@ func zona():
 func _on_Mort_body_entered(body):
 	print('ha entrat')
 	print(body.collision_layer)
-	if body.collision_layer == 2:
-		mal()
+#	if body.has_method('matar'):
+#		print('Holiwi')
+#		mal()
+#	if body.collision_layer == 2:
+#		mal()
 
 
 

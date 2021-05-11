@@ -60,6 +60,8 @@ func _on_Vision_body_exited(body):
 	if body.has_method('mal'):
 		target = target_no
 
+func matar():
+	pass
 
 func _on_AnimatedSprite_animation_finished():
 	if $AnimatedSprite.animation == 'Engachar':
