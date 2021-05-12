@@ -15,7 +15,10 @@ func _on_rang_area_exited(area):
 	if area.get_parent().has_method('final'):
 		enemics.erase(area.get_parent()) 
 func _process(delta):
-	enemic_proper()
+	if target_actual:
+		pass
+	elif !target_actual:
+		enemic_proper()
 	if target_actual:
 		rotacio()
 		if dispar== true:

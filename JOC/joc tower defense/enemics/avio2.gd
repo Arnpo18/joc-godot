@@ -1,6 +1,6 @@
 extends PathFollow2D
-var velocitat=100
-var vida = 7
+var velocitat=200
+var vida = 40
 var bum = preload("res://joc tower defense/bum.tscn")
 func _ready():
 	pass
@@ -9,7 +9,7 @@ func _process(delta):
 	$Label.text=str(vida)
 	offset += velocitat * delta
 	if offset >= 5500:
-		final()
+		final2()
 	if vida <= 0:
 		final()
 		
@@ -19,7 +19,7 @@ func final():
 	b.scale=Vector2(2,2)
 	GlobalTd.bales.add_child(b)
 	queue_free()
-	GlobalTd.diners+=3
+	GlobalTd.diners+=10
 
 func _on_Area2D_area_entered(area):
 	if area.is_in_group('bala'):
@@ -32,3 +32,5 @@ func _on_Area2D_area_entered(area):
 		GlobalTd.bales.add_child(a)
 		a.play('default')
 		area.queue_free()
+func final2():
+	pass

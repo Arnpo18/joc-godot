@@ -26,6 +26,7 @@ func _on_TextureButtona_pressed():
 		tanc.global_position=rect_global_position+Vector2(32,32)
 		get_parent().add_child(tanc)
 		queue_free()
+		GlobalTd.diners-=5
 	else:
 		$Label.show()
 		$Timer.start()
@@ -35,18 +36,38 @@ func _on_TextureButtona_pressed():
 
 
 func _on_TextureButton2_pressed():
-	var tanc=cano_2.instance()
-	tanc.global_position=rect_global_position+Vector2(32,32)
-	get_parent().add_child(tanc)
-	queue_free() # Replace with function body.
-
+	if GlobalTd.diners>=10:
+		var tanc=cano_2.instance()
+		tanc.global_position=rect_global_position+Vector2(32,32)
+		get_parent().add_child(tanc)
+		queue_free() # Replace with function body.
+		GlobalTd.diners-=10
+	else:
+		$Label.show()
+		$Timer.start()
 
 func _on_TextureButton3_pressed():
-	var llm=missils_1.instance()
-	llm.global_position=rect_global_position+Vector2(32,32)
-	get_parent().add_child(llm)
-	queue_free() # Replace with function body.
-
+	if GlobalTd.diners>=15:
+		var llm=missils_1.instance()
+		llm.global_position=rect_global_position+Vector2(32,32)
+		get_parent().add_child(llm)
+		queue_free() # Replace with function body.
+		GlobalTd.diners-=15
+	else:
+		$Label.show()
+		$Timer.start()
 
 func _on_Timer_timeout():
 	$Label.hide() # Replace with function body.
+
+
+func _on_TextureButton4_pressed():
+	if GlobalTd.diners>=30:
+		var llm=missils_2.instance()
+		llm.global_position=rect_global_position+Vector2(32,32)
+		get_parent().add_child(llm)
+		queue_free() # Replace with function body. # Replace with function body.
+		GlobalTd.diners-=30
+	else:
+		$Label.show()
+		$Timer.start()

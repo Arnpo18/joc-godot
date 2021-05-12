@@ -1,8 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://joc tower defense/assets/Tilesheet/towerDefense_tilesheet.png" type="Texture" id=1]
-[ext_resource path="res://joc tower defense/torres/llença_míssils.gd" type="Script" id=2]
-
+[ext_resource path="res://joc tower defense/torres/doble_llença_míssils.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 35.7771
@@ -29,29 +28,32 @@ region_rect = Rect2( 1216, 448, 64, 64 )
 rotation = 6.28319
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 1280, 640, 64, 64 )
+region_rect = Rect2( 1280, 576, 64, 64 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="foc_1" type="Sprite" parent="arma"]
-visible = false
-position = Vector2( 7.55387, -40 )
+show_behind_parent = true
+position = Vector2( 10.6666, -10.6667 )
 rotation = -4.46638e-06
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 1216, 768, 64, 64 )
+region_rect = Rect2( 1344, 640, 64, 64 )
 
 [node name="foc_2" type="Sprite" parent="arma"]
-visible = false
-position = Vector2( -8.00018, -40 )
+show_behind_parent = true
+position = Vector2( -10.6667, -10.6666 )
 rotation = -4.46638e-06
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 1216, 768, 64, 64 )
+region_rect = Rect2( 1344, 640, 64, 64 )
+
+[node name="Position2D2" type="Position2D" parent="arma"]
+position = Vector2( -10.6668, -21.3333 )
 
 [node name="Position2D" type="Position2D" parent="arma"]
-position = Vector2( -0.000107193, -24 )
+position = Vector2( 10.6666, -21.3334 )
 rotation = -4.46638e-06
 
 [node name="rang" type="Area2D" parent="."]
@@ -65,7 +67,7 @@ shape = SubResource( 2 )
 [node name="Tween" type="Tween" parent="."]
 
 [node name="animacio_foc" type="Timer" parent="."]
-wait_time = 0.408
+wait_time = 0.5
 one_shot = true
 [connection signal="area_entered" from="rang" to="." method="_on_rang_area_entered"]
 [connection signal="area_exited" from="rang" to="." method="_on_rang_area_exited"]

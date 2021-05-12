@@ -1,7 +1,7 @@
 extends Node
 
-var diners = 0
-
+var diners = 5
+var bales
 func _ready():
 	pass 
 

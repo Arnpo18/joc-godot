@@ -29,6 +29,7 @@ __meta__ = {
 }
 
 [node name="GridContainer" type="GridContainer" parent="."]
+visible = false
 margin_left = -52.8884
 margin_top = 76.2467
 margin_right = 305.112
@@ -190,4 +191,5 @@ one_shot = true
 [connection signal="pressed" from="GridContainer/TextureButtona" to="." method="_on_TextureButtona_pressed"]
 [connection signal="pressed" from="GridContainer/TextureButton2" to="." method="_on_TextureButton2_pressed"]
 [connection signal="pressed" from="GridContainer/TextureButton3" to="." method="_on_TextureButton3_pressed"]
+[connection signal="pressed" from="GridContainer/TextureButton4" to="." method="_on_TextureButton4_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -13,15 +13,18 @@ func _on_rang_area_exited(area):
 	if area.get_parent().has_method('final'):
 		enemics.erase(area.get_parent()) 
 func _process(delta):
-	enemic_proper()
+	if target_actual:
+		pass
+	elif !target_actual:
+		enemic_proper()
 	if target_actual:
 		rotacio()
 		if dispar== true:
 			var ball=bala.instance()
 			ball.set_target(target_actual)
 			ball.rotation=rotation
-			add_child(ball)
-			
+			ball.global_position=$arma/Position2D.global_position
+			GlobalTd.bales.add_child(ball)
 			$base2.hide()
 			$arma.show()
 			$animacio_foc.start()
