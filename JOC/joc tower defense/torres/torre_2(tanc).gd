@@ -17,6 +17,7 @@ func _on_rang_area_exited(area):
 	if area.get_parent().has_method('final'):
 		enemics.erase(area.get_parent()) 
 func _process(delta):
+	
 	$timer_dispar.wait_time=atack_speed
 	if enemics.has(target_actual)==false:
 		enemic_proper()
@@ -24,12 +25,15 @@ func _process(delta):
 		pass
 	elif !target_actual:
 		enemic_proper()
+		$arma/foc_1.hide()
+		$arma/foc_2.hide()
 	if target_actual:
 		rotacio()
 		if dispar== true:
 			var ball=bala.instance()
 			ball.set_target(target_actual)
-			add_child(ball)
+			ball.global_position=$arma/Position2D.global_position
+			GlobalTd.bales.add_child(ball)
 			$arma/foc_1.show()
 			$animacio_foc.start()
 			dispar = false
@@ -37,7 +41,8 @@ func _process(delta):
 		if dispar2==true:
 			var ball2=bala2.instance()
 			ball2.set_target(target_actual)
-			add_child(ball2)
+			ball2.global_position=$arma/Position2D2.global_position
+			GlobalTd.bales.add_child(ball2)
 			$arma/foc_2.show()
 			dispar2=false
 			$animacio_foc.start()
@@ -65,7 +70,10 @@ func _on_animacio_foc_timeout():
 	if x==1:
 		$arma/foc_1.hide()
 	if x==2:
-		$arma/foc_2.hide()# Replace with function body.
+		$arma/foc_2.hide()
+	
+		
+
 func rotacio():
 		var juan = target_actual.global_position - global_position
 		var selona = atan2(juan.y,juan.x)

@@ -231,12 +231,17 @@ font_data = ExtResource( 7 )
 [node name="Node" type="Node"]
 script = ExtResource( 6 )
 
-[node name="random" type="Timer" parent="."]
-wait_time = 2.0
+[node name="ronda_1" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
 
-[node name="spawn" type="Timer" parent="."]
-wait_time = 3.4
-autostart = true
+[node name="enemic" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="ronda_3" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
 
 [node name="mapa" parent="." instance=ExtResource( 1 )]
 
@@ -444,4 +449,6 @@ margin_bottom = 319.0
 
 [node name="Bales" type="Node2D" parent="."]
 script = ExtResource( 8 )
-[connection signal="timeout" from="spawn" to="." method="_on_spawn_timeout"]
+[connection signal="timeout" from="ronda_1" to="." method="_on_ronda_1_timeout"]
+[connection signal="timeout" from="enemic" to="." method="_on_enemic_timeout"]
+[connection signal="timeout" from="ronda_3" to="." method="_on_ronda_3_timeout"]

@@ -1,6 +1,6 @@
 extends Node
 
-var diners = 5
+var diners = 200
 var bales
 func _ready():
 	pass 

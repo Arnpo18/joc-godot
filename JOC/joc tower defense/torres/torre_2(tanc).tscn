@@ -50,7 +50,11 @@ region_enabled = true
 region_rect = Rect2( 1216, 768, 64, 64 )
 
 [node name="Position2D" type="Position2D" parent="arma"]
-position = Vector2( -0.000107193, -24 )
+position = Vector2( 6.18008, -26.737 )
+rotation = -4.46638e-06
+
+[node name="Position2D2" type="Position2D" parent="arma"]
+position = Vector2( -5.73887, -26.7369 )
 rotation = -4.46638e-06
 
 [node name="rang" type="Area2D" parent="."]
@@ -65,7 +69,7 @@ wait_time = 0.65
 [node name="Tween" type="Tween" parent="."]
 
 [node name="animacio_foc" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.05
 one_shot = true
 [connection signal="area_entered" from="rang" to="." method="_on_rang_area_entered"]
 [connection signal="area_exited" from="rang" to="." method="_on_rang_area_exited"]

@@ -1,6 +1,6 @@
 extends PathFollow2D
 var velocitat=60
-var vida = 60
+var vida = 50
 var bum = preload("res://joc tower defense/bum.tscn")
 func _ready():
 	pass
