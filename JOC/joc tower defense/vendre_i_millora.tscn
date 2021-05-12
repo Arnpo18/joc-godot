@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://joc tower defense/assets/84-png-and-svg-upgrading-icons-for-free-download-uihere-upgrade-png-512_512.png" type="Texture" id=1]
+[ext_resource path="res://joc tower defense/assets/us-dollar--v2.png" type="Texture" id=2]
+[ext_resource path="res://joc tower defense/assets/Dosis-VariableFont_wght.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://joc tower defense/vendre_i_millora.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 18
+font_data = ExtResource( 3 )
+
+[node name="vendre_i_millora" type="TextureButton"]
+margin_left = -37.0
+margin_top = -37.0
+margin_right = 37.0
+margin_bottom = 37.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="."]
+margin_left = -11.0
+margin_top = 74.3334
+margin_right = 1017.0
+margin_bottom = 586.333
+rect_scale = Vector2( 0.1, 0.1 )
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="millora" type="TextureButton" parent="GridContainer"]
+margin_right = 512.0
+margin_bottom = 512.0
+texture_normal = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="GridContainer/millora"]
+margin_left = 240.0
+margin_top = 426.666
+margin_right = 280.0
+margin_bottom = 440.666
+custom_fonts/font = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="vendre" type="TextureButton" parent="GridContainer"]
+margin_left = 516.0
+margin_right = 1028.0
+margin_bottom = 512.0
+texture_normal = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="GridContainer/vendre"]
+margin_left = 204.0
+margin_top = 426.666
+margin_right = 244.0
+margin_bottom = 450.666
+custom_fonts/font = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="." to="." method="_on_vendre_i_millora_pressed"]
+[connection signal="pressed" from="GridContainer/millora" to="." method="_on_millora_pressed"]
+[connection signal="pressed" from="GridContainer/vendre" to="." method="_on_vendre_pressed"]

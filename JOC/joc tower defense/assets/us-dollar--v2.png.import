@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/samurai.png-31b6fd74c09e7a1440e1136a6bb0d0b3.stex"
+path="res://.import/us-dollar--v2.png-02e4e393961622a70e91110f204c360d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://joc lluita/hud/samurai.png"
-dest_files=[ "res://.import/samurai.png-31b6fd74c09e7a1440e1136a6bb0d0b3.stex" ]
+source_file="res://joc tower defense/assets/us-dollar--v2.png"
+dest_files=[ "res://.import/us-dollar--v2.png-02e4e393961622a70e91110f204c360d.stex" ]
 
 [params]
 

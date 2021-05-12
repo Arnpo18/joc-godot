@@ -61,6 +61,8 @@ shape = SubResource( 2 )
 [node name="animacio_foc" type="Timer" parent="."]
 wait_time = 0.408
 one_shot = true
+
+[node name="Sprite" type="Sprite" parent="."]
 [connection signal="area_entered" from="rang" to="." method="_on_rang_area_entered"]
 [connection signal="area_exited" from="rang" to="." method="_on_rang_area_exited"]
 [connection signal="timeout" from="timer_dispar" to="." method="_on_timer_dispar_timeout"]

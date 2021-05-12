@@ -19,7 +19,7 @@ func final():
 	b.scale=Vector2(2,2)
 	GlobalTd.bales.add_child(b)
 	queue_free()
-	GlobalTd.diners+=10
+	GlobalTd.diners+=12
 
 func _on_Area2D_area_entered(area):
 	if area.is_in_group('bala'):

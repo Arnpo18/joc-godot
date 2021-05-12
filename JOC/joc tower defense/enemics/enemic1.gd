@@ -1,5 +1,5 @@
 extends PathFollow2D
-var velocitat=100
+var velocitat=80
 var vida = 7
 var bum = preload("res://joc tower defense/bum.tscn")
 func _ready():
@@ -19,7 +19,7 @@ func final():
 	b.scale=Vector2(2,2)
 	GlobalTd.bales.add_child(b)
 	queue_free()
-	GlobalTd.diners+=3
+	GlobalTd.diners+=2.5
 
 func _on_Area2D_area_entered(area):
 	if area.is_in_group('bala'):

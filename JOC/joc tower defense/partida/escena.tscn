@@ -233,11 +233,10 @@ script = ExtResource( 6 )
 
 [node name="random" type="Timer" parent="."]
 wait_time = 2.0
-autostart = true
 
-[node name="r1" type="Timer" parent="."]
-wait_time = 2.0
-one_shot = true
+[node name="spawn" type="Timer" parent="."]
+wait_time = 3.4
+autostart = true
 
 [node name="mapa" parent="." instance=ExtResource( 1 )]
 
@@ -275,6 +274,30 @@ margin_top = 256.0
 margin_right = 416.0
 margin_bottom = 320.0
 
+[node name="TextureButton24" parent="." instance=ExtResource( 3 )]
+margin_left = 608.0
+margin_top = 384.0
+margin_right = 672.0
+margin_bottom = 448.0
+
+[node name="TextureButton25" parent="." instance=ExtResource( 3 )]
+margin_left = 864.0
+margin_top = 480.0
+margin_right = 928.0
+margin_bottom = 544.0
+
+[node name="TextureButton26" parent="." instance=ExtResource( 3 )]
+margin_left = 1632.0
+margin_top = 488.0
+margin_right = 1696.0
+margin_bottom = 552.0
+
+[node name="TextureButton27" parent="." instance=ExtResource( 3 )]
+margin_left = 1888.0
+margin_top = 384.0
+margin_right = 1952.0
+margin_bottom = 448.0
+
 [node name="TextureButton3" parent="." instance=ExtResource( 3 )]
 margin_left = 608.0
 margin_top = 256.0
@@ -298,6 +321,12 @@ margin_left = 480.0
 margin_top = 832.0
 margin_right = 542.0
 margin_bottom = 895.0
+
+[node name="TextureButton29" parent="." instance=ExtResource( 3 )]
+margin_left = 480.0
+margin_top = 960.0
+margin_right = 542.0
+margin_bottom = 1023.0
 
 [node name="TextureButton5" parent="." instance=ExtResource( 3 )]
 margin_left = 608.0
@@ -327,6 +356,12 @@ margin_bottom = 1087.0
 margin_left = 1024.0
 margin_top = 1024.0
 margin_right = 1086.0
+margin_bottom = 1087.0
+
+[node name="TextureButton28" parent="." instance=ExtResource( 3 )]
+margin_left = 1248.0
+margin_top = 1024.0
+margin_right = 1310.0
 margin_bottom = 1087.0
 
 [node name="TextureButton13" parent="." instance=ExtResource( 3 )]
@@ -409,5 +444,4 @@ margin_bottom = 319.0
 
 [node name="Bales" type="Node2D" parent="."]
 script = ExtResource( 8 )
-[connection signal="timeout" from="random" to="." method="_on_random_timeout"]
-[connection signal="timeout" from="r1" to="." method="_on_r1_timeout"]
+[connection signal="timeout" from="spawn" to="." method="_on_spawn_timeout"]

@@ -19,14 +19,14 @@ func final():
 	b.scale=Vector2(2,2)
 	GlobalTd.bales.add_child(b)
 	queue_free()
-	GlobalTd.diners+=10
+	GlobalTd.diners+=8
 
 func _on_Area2D_area_entered(area):
 	if area.is_in_group('bala'):
 		vida -= 1
 		area.queue_free()
 	if area.is_in_group('míssil'):
-		vida -= 5
+		vida -= 3
 		var a = bum.instance()
 		a.global_position=area.global_position
 		GlobalTd.bales.add_child(a)
