@@ -51,8 +51,8 @@ func _physics_process(delta):
 		anima(velocitat)
 		zona()
 	
-	if Input.is_action_just_pressed("ui_accept"):
-		mal()
+#	if Input.is_action_just_pressed("ui_accept"):
+#		mal()
 
 func anima(velocitat):
 	if velocitat == Vector2.ZERO:
@@ -88,8 +88,8 @@ func _on_Mort_body_entered(body):
 #	if body.has_method('matar'):
 #		print('Holiwi')
 #		mal()
-#	if body.collision_layer == 2:
-#		mal()
+	if body.collision_layer == 2:
+		mal()
 
 
 

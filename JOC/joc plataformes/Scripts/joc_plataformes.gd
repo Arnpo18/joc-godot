@@ -12,6 +12,4 @@ func _process(delta):
 		
 		add_child(Protagonista.instance())
 		$Protagonista.position = Vector2(120+1920*($"/root/Global_Plataformes".mapa-1), 800)
-		$Protagonista.collision_layer = 1
-		$Protagonista.collision_mask = 4
 		$"/root/Global_Plataformes".respawn = false
