@@ -21,6 +21,14 @@ func _process(delta):
 		n=0
 		ronda_3()
 		ronda=0
+	if ronda==4 and $Path2D.get_child_count()==0:
+		n=0
+		ronda=0
+		ronda_4()
+	if ronda==5 and $Path2D.get_child_count()==0:
+		n=0
+		ronda=0
+		ronda_5()
 func e1():
 	var a = e1.instance()
 	$Path2D.add_child(a)
@@ -47,16 +55,20 @@ func ronda_2():
 		e1()
 		enemic=false
 		n+=1
-	elif n==1:
-		t1()
+	if n==1:
+		e1()
 		enemic=false
 		n+=1
 	elif n==2:
+		t1()
+		enemic=false
+		n+=1
+	elif n==3:
 		e2()
 		enemic=false
 		n+=1
-		$enemic.wait_time=10
-	elif n==3:
+		$enemic.wait_time=15
+	elif n==4:
 		a1()
 		ronda = 3
 	if enemic == false:
@@ -72,15 +84,128 @@ func ronda_3():
 	elif n==1:
 		t1()
 		n+=1
-		$ronda_3.wait_time=8
+		$ronda_3.wait_time=5
 		$ronda_3.start()
 	elif n==2:
+		e1()
+		n+=1
+		$ronda_3.wait_time=5
+		$ronda_3.start()
+	elif n==3:
 		t1()
 		n+=1
 		$ronda_3.wait_time=2.5
 		$ronda_3.start()
-	elif n==3:
+	elif n==4:
 		t1()
 		ronda=4
 func _on_ronda_3_timeout():
 	ronda_3() # Replace with function body.
+func ronda_4():
+	if n==0:
+		a1()
+		n+=1
+		$ronda_4.start()
+	elif n==1:
+		a1()
+		n+=1
+		$ronda_4.start()
+	elif n==2:
+		e1()
+		n+=1
+		$ronda_4.wait_time=1.5
+		$ronda_4.start()
+	elif n==3:
+		e1()
+		n+=1
+		$ronda_4.wait_time=1.5
+		$ronda_4.start()
+	elif n==4:
+		e1()
+		n+=1
+		$ronda_4.wait_time=1.5
+		$ronda_4.start()
+	elif n==5:
+		t1()
+		n+=1
+		$ronda_4.wait_time=2
+		$ronda_4.start()
+	elif n==6:
+		e1()
+		n+=1
+		$ronda_4.wait_time=1.5
+		$ronda_4.start()	
+	elif n==7:
+		e1()
+		n+=1
+		$ronda_4.wait_time=1.5
+		$ronda_4.start()
+	elif n==8:
+		e1()
+		n+=1
+		$ronda_4.wait_time=8
+		$ronda_4.start()
+	elif n==9:
+		a1()
+		n+=1
+		$ronda_4.wait_time=5
+		$ronda_4.start()
+	elif n==10:
+		a1()
+		ronda=5
+func _on_ronda_4_timeout():
+	ronda_4() # Replace with function body.
+func ronda_5():
+	if n==0:
+		t1()
+		n+=1
+		$ronda_5.start()
+	elif n==1:
+		t1()
+		a1()
+		n+=1
+		$ronda_5.start()
+	elif n==2:
+		t1()
+		a1()
+		n+=1
+		$ronda_5.wait_time=6
+		$ronda_5.start()
+	elif n==3:
+		t1()
+		a1()
+		n+=1
+		$ronda_5.wait_time=2
+		$ronda_5.start()
+	elif n==4:
+		t1()
+		a1()
+		n+=1
+		$ronda_5.start()
+	elif n==5:
+		t1()
+		n+=1
+		$ronda_5.wait_time=6
+		$ronda_5.start()
+	elif n==6:
+		t1()
+		a1()
+		n+=1
+		$ronda_5.wait_time=2
+		$ronda_5.start()
+	elif n==7:
+		t1()
+		a1()
+		n+=1
+		$ronda_5.start()
+	elif n==8:
+		t1()
+		n+=1
+		$ronda_5.wait_time=10
+		$ronda_5.start()
+	elif n==9:
+		a2()
+		ronda==6
+func _on_ronda_5_timeout():
+	ronda_5()
+

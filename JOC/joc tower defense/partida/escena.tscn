@@ -243,6 +243,18 @@ one_shot = true
 wait_time = 2.5
 one_shot = true
 
+[node name="ronda_4" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="ronda_5" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="ronda_6" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
 [node name="mapa" parent="." instance=ExtResource( 1 )]
 
 [node name="posicions" type="TileMap" parent="."]
@@ -452,3 +464,5 @@ script = ExtResource( 8 )
 [connection signal="timeout" from="ronda_1" to="." method="_on_ronda_1_timeout"]
 [connection signal="timeout" from="enemic" to="." method="_on_enemic_timeout"]
 [connection signal="timeout" from="ronda_3" to="." method="_on_ronda_3_timeout"]
+[connection signal="timeout" from="ronda_4" to="." method="_on_ronda_4_timeout"]
+[connection signal="timeout" from="ronda_5" to="." method="_on_ronda_5_timeout"]
