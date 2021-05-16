@@ -7,28 +7,35 @@ const a2 = preload("res://joc tower defense/enemics/avio_enemic_2.tscn")
 var enemic = true
 var ronda=1
 var n=0
+var r=1
 func _ready():
 	$ronda_1.start()	
 func _process(delta):
 	$Label.text = str(GlobalTd.diners)+('$')
+	$ronda.text="Ronda:"+ str(r)
+	$vida.text=str(GlobalTd.vida)
 	if ronda==1:
 		ronda==0
 	if ronda==2 and $Path2D.get_child_count()==0:
 		n=0
 		ronda_2()
 		ronda=0
+		r=2
 	if ronda==3 and $Path2D.get_child_count()==0:
 		n=0
 		ronda_3()
 		ronda=0
+		r=3
 	if ronda==4 and $Path2D.get_child_count()==0:
 		n=0
 		ronda=0
 		ronda_4()
+		r=4
 	if ronda==5 and $Path2D.get_child_count()==0:
 		n=0
 		ronda=0
 		ronda_5()
+		r=5
 func e1():
 	var a = e1.instance()
 	$Path2D.add_child(a)

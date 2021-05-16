@@ -3,8 +3,9 @@ const bala = preload("res://joc tower defense/torres/bala.tscn")
 var enemics = []
 var target_actual=null
 var dispar = true
-var atack_speed = 1
+var type = 1
 var valor = 5
+var ats=1
 func _ready():
 	$timer_dispar.start() 
 func _on_rang_area_entered(area):
@@ -14,7 +15,7 @@ func _on_rang_area_exited(area):
 	if area.get_parent().has_method('final'):
 		enemics.erase(area.get_parent()) 
 func _process(delta):
-	$timer_dispar.wait_time=atack_speed
+	$timer_dispar.wait_time=ats
 	if enemics.has(target_actual)==false:
 		enemic_proper()
 	elif target_actual:

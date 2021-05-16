@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://joc tower defense/assets/Tilesheet/towerDefense_tilesheet.png" type="Texture" id=1]
 [ext_resource path="res://joc tower defense/torres/llença_míssils.gd" type="Script" id=2]
+[ext_resource path="res://joc tower defense/vendre_i_millora.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 35.7771
@@ -58,6 +59,8 @@ wait_time = 1.8
 [node name="animacio_foc" type="Timer" parent="."]
 wait_time = 0.636
 one_shot = true
+
+[node name="vendre_i_millora" parent="." instance=ExtResource( 3 )]
 [connection signal="area_entered" from="rang" to="." method="_on_rang_area_entered"]
 [connection signal="area_exited" from="rang" to="." method="_on_rang_area_exited"]
 [connection signal="timeout" from="timer_dispar" to="." method="_on_timer_dispar_timeout"]

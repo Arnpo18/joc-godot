@@ -6,8 +6,9 @@ var target_actual=null
 var dispar = true
 var dispar2 = false
 var x = 1
-var atack_speed = 0.65
+var type = 2
 var valor = 10
+var ats=0.65
 func _ready():
 	$timer_dispar.start() 
 func _on_rang_area_entered(area):
@@ -18,7 +19,7 @@ func _on_rang_area_exited(area):
 		enemics.erase(area.get_parent()) 
 func _process(delta):
 	
-	$timer_dispar.wait_time=atack_speed
+	$timer_dispar.wait_time=ats
 	if enemics.has(target_actual)==false:
 		enemic_proper()
 	elif target_actual:
