@@ -11,7 +11,7 @@ var Zona5 = Zona4 + Vector2(1920, 0)
 func _ready():
 	position = Zona1
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if $"/root/Global_Plataformes".mapa == 1:
 		if position == Zona2:
 			$"/root/Global_Plataformes".Enemics_Zona1 = true
@@ -29,3 +29,15 @@ func _physics_process(delta):
 			$"/root/Global_Plataformes".Enemics_Zona3 = true
 			$Tween.interpolate_property(self,'position',position, Zona3, 0.3,Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 			$Tween.start()
+	if $"/root/Global_Plataformes".mapa == 4:
+		if position == Zona3 or position == Zona5:
+			$"/root/Global_Plataformes".Enemics_Zona4 = true
+			$Tween.interpolate_property(self,'position',position, Zona4, 0.3,Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+			$Tween.start()
+
+	if $"/root/Global_Plataformes".mapa == 5:
+		if position == Zona4:
+			$"/root/Global_Plataformes".Enemics_Zona5 = true
+			$Tween.interpolate_property(self,'position',position, Zona5, 0.3,Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+			$Tween.start()
+	

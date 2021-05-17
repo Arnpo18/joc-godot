@@ -54,7 +54,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		mal()
 
-func anima(velocitat):
+func anima(_velocitat):
 	if velocitat == Vector2.ZERO:
 		$AnimatedSprite.play('Idle')
 	if velocitat.y > 0:

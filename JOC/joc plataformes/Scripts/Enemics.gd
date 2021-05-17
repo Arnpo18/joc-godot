@@ -6,7 +6,7 @@ onready var Bat = preload("res://joc plataformes/Escenes/Bat.tscn")
 func _ready():
 	pass
 
-func _process(delta):
+func _process(_delta):
 	if $"/root/Global_Plataformes".Enemics_Zona1 == true:
 		for child in get_children():
 			remove_child(child)

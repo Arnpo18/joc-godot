@@ -48,7 +48,7 @@ func _physics_process(delta):
 	
 	anima(velocitat)
 
-func anima(velocitat):
+func anima(_velocitat):
 	if not target:
 		if velocitat.x == 0:
 			$AnimatedSprite.play('Idle')

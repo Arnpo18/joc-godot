@@ -40,7 +40,7 @@ func _physics_process(delta):
 	
 	anima(velocitat)
 
-func anima(velocitat):
+func anima(_velocitat):
 	if velocitat != Vector2.ZERO:
 		$AnimatedSprite.play('Volar')
 #	if not target and velocitat == Vector2.ZERO:

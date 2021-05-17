@@ -6,7 +6,7 @@ func _ready():
 	pass
 
 
-func _process(delta):
+func _process(_delta):
 	if $"/root/Global_Plataformes".respawn == true:
 		
 		remove_child($Protagonista)
