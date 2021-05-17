@@ -15,7 +15,6 @@ collision_mask = 0
 
 [node name="Protagonista" parent="." instance=ExtResource( 3 )]
 position = Vector2( 120, 800 )
-collision_mask = 4
 
 [node name="Enemics" type="Node2D" parent="."]
 script = ExtResource( 4 )

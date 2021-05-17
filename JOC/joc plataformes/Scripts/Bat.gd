@@ -54,16 +54,13 @@ func anima(velocitat):
 
 func _on_Vision_body_entered(body):
 	if body.has_method('mal'):
-		print('he vist')
 		target = body
 
 func _on_Vision_body_exited(body):
 	if body.has_method('mal'):
 		target = target_no
 
-func matar():
-	pass
 
-func _on_AnimatedSprite_animation_finished():
-	if $AnimatedSprite.animation == 'Engachar':
-		pass
+#func _on_AnimatedSprite_animation_finished():
+#	if $AnimatedSprite.animation == 'Engachar':
+#		pass

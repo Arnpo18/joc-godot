@@ -9,8 +9,10 @@ func _ready():
 func _process(delta):
 	if $"/root/Global_Plataformes".Enemics_Zona1 == true:
 		for child in get_children():
-			child.queue_free()
+			remove_child(child)
+		
 		add_child(Bat.instance())
+		
 		$Bat.position = Vector2(1000, 191)
 		
 		$"/root/Global_Plataformes".Enemics_Zona1 = false
@@ -18,7 +20,7 @@ func _process(delta):
 		
 	if $"/root/Global_Plataformes".Enemics_Zona2 == true:
 		for child in get_children():
-			child.queue_free()
+			remove_child(child)
 		add_child(AngryPig.instance())
 		$AngryPig.position = Vector2(3232, 919)
 		
@@ -27,7 +29,8 @@ func _process(delta):
 		
 	if $"/root/Global_Plataformes".Enemics_Zona3 == true:
 		for child in get_children():
-			child.queue_free()
+			remove_child(child)
+		
 		add_child(Bat.instance())
 		$Bat.position = Vector2(1000 + 1920*2, 191)
 		
