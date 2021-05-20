@@ -4,12 +4,17 @@ const e2 = preload("res://joc tower defense/enemics/enemic_2.tscn")
 const t1 = preload("res://joc tower defense/enemics/tanc_enemic_1.tscn")
 const a1 = preload("res://joc tower defense/enemics/avio_enemic_1.tscn")
 const a2 = preload("res://joc tower defense/enemics/avio_enemic_2.tscn")
+const b = preload("res://joc tower defense/TextureButton.tscn")
 var enemic = true
 var ronda=1
 var n=0
 var r=1
 func _ready():
 	$ronda_1.start()	
+func boto(x):
+	var boto=b.instance()
+	boto.rect_global_position=x
+	add_child(boto)
 func _process(delta):
 	$Label.text = str(GlobalTd.diners)+('$')
 	$ronda.text="Ronda:"+ str(r)
@@ -36,6 +41,11 @@ func _process(delta):
 		ronda=0
 		ronda_5()
 		r=5
+	if ronda==6 and $Path2D.get_child_count()==0:
+		n=0
+		ronda=0
+		ronda_6()
+		r=6
 func e1():
 	var a = e1.instance()
 	$Path2D.add_child(a)
@@ -212,7 +222,60 @@ func ronda_5():
 		$ronda_5.start()
 	elif n==9:
 		a2()
-		ronda==6
+		ronda=6
 func _on_ronda_5_timeout():
 	ronda_5()
+func ronda_6():
+	if n==0:
+		a1()
+		n+=1
+		a2()
+		t1()
+		$ronda_6.start()
+	elif n==1:
+		a1()
+		n+=1
+		$ronda_6.start()
+	elif n==2:
+		a1()
+		n+=1
+		a2()
+		$ronda_6.start()
+	elif n==3:
+		a1()
+		n+=1
+		$ronda_6.start()
+	elif n==4:
+		a1()
+		n+=1
+		a2()
+		$ronda_6.start()
+	elif n==5:
+		a1()
+		n+=1
+		$ronda_6.start()
+	elif n==6:
+		a1()
+		n+=1
+		a2()
+		$ronda_6.start()
+	elif n==7:
+		a1()
+		t1()
+		n+=1
+		$ronda_6.start()
+	elif n==8:
+		e2()
+		n+=1
+		$ronda_6.start()
+func _on_ronda_6_timeout():
+	ronda_6() # Replace with function body.
+
+
+func _on_Area2D_area_entered(area):
+	if area.is_in_group('bala'):
+		area.queue_free()
+	if area.is_in_group('míssil'):
+		area.queue_free()
+
 

@@ -19,7 +19,7 @@ rotation = 1.5708
 shape = SubResource( 1 )
 
 [node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( -8, 32 )
+position = Vector2( -8.7937, 11.7606 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 1088, 768, 64, 64 )

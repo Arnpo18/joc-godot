@@ -7,7 +7,7 @@ var dispar = true
 var dispar2 = false
 var x = 1
 var type = 2
-var valor = 10
+var valor = 7.5
 var ats=0.65
 func _ready():
 	$timer_dispar.start() 
@@ -39,6 +39,7 @@ func _process(delta):
 			$animacio_foc.start()
 			dispar = false
 			$timer_dispar.start()
+			$arma/foc_2.hide()
 		if dispar2==true:
 			var ball2=bala2.instance()
 			ball2.set_target(target_actual)
@@ -48,6 +49,7 @@ func _process(delta):
 			dispar2=false
 			$animacio_foc.start()
 			$timer_dispar.start()
+			$arma/foc_1.hide()
 		else: 
 			pass
 func enemic_proper():

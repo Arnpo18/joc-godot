@@ -47,12 +47,12 @@ func _on_TextureButton2_pressed():
 		$Timer.start()
 
 func _on_TextureButton3_pressed():
-	if GlobalTd.diners>=15:
+	if GlobalTd.diners>=20:
 		var llm=missils_1.instance()
 		llm.global_position=rect_global_position+Vector2(32,32)
 		get_parent().add_child(llm)
 		queue_free() # Replace with function body.
-		GlobalTd.diners-=15
+		GlobalTd.diners-=20
 	else:
 		$Label.show()
 		$Timer.start()
@@ -62,12 +62,12 @@ func _on_Timer_timeout():
 
 
 func _on_TextureButton4_pressed():
-	if GlobalTd.diners>=30:
+	if GlobalTd.diners>=40:
 		var llm=missils_2.instance()
 		llm.global_position=rect_global_position+Vector2(32,32)
 		get_parent().add_child(llm)
 		queue_free() # Replace with function body. # Replace with function body.
-		GlobalTd.diners-=30
+		GlobalTd.diners-=40
 	else:
 		$Label.show()
 		$Timer.start()

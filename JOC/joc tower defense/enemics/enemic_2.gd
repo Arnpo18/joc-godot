@@ -8,7 +8,7 @@ func _ready():
 func _process(delta):
 	$Label.text=str(vida)
 	offset += velocitat * delta
-	if offset >= 5500:
+	if offset >= 5350:
 		final2()
 	if vida <= 0:
 		final()
@@ -19,7 +19,7 @@ func final():
 	b.scale=Vector2(2,2)
 	GlobalTd.bales.add_child(b)
 	queue_free()
-	GlobalTd.diners+=5
+	GlobalTd.diners+=4
 
 func _on_Area2D_area_entered(area):
 	if area.is_in_group('bala'):
@@ -33,4 +33,9 @@ func _on_Area2D_area_entered(area):
 		a.play('default')
 		area.queue_free()
 func final2():
-	pass
+	var a = bum.instance()
+	a.global_position=global_position
+	GlobalTd.bales.add_child(a)
+	a.play('default')
+	GlobalTd.vida-=25
+	queue_free()

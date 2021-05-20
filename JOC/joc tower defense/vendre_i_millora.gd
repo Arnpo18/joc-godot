@@ -28,30 +28,35 @@ func _on_vendre_i_millora_pressed():
 
 func _on_millora_pressed():
 	if get_parent().type==1 and GlobalTd.diners >= preu_inicial:
-		get_parent().ats=u*0.92
-		u*=0.92
+		get_parent().ats=u*0.87
+		u*=0.87
 		GlobalTd.diners -= preu_inicial
 		preu_inicial*=1.25
 		preu_inicial= stepify(preu_inicial,0.1)
 		
 	if get_parent().type==2 and GlobalTd.diners >= preu_inicial:
-		get_parent().ats=dos*0.92
-		dos*=0.92
+		get_parent().ats=dos*0.87
+		dos*=0.87
 		GlobalTd.diners -= preu_inicial
 		preu_inicial*=1.35
 		preu_inicial= stepify(preu_inicial,0.1)
 		
 	if get_parent().type==3 and GlobalTd.diners >= preu_inicial:
-		get_parent().ats=tres*0.92
-		tres*=0.92
+		get_parent().ats=tres*0.85
+		tres*=0.85
 		GlobalTd.diners -= preu_inicial
 		preu_inicial*=1.4
 		preu_inicial= stepify(preu_inicial,0.1)
 		
 	if get_parent().type==4 and GlobalTd.diners >= preu_inicial:
-		get_parent().ats=quatre*0.92
-		quatre*=0.92
+		get_parent().ats=quatre*0.9
+		quatre*=0.9
 		GlobalTd.diners -= preu_inicial
 		preu_inicial*=1.5
 		preu_inicial= stepify(preu_inicial,0.1)
 		
+
+func _on_vendre_pressed():
+	get_parent().get_parent().boto(get_parent().global_position-Vector2(32,32))
+	GlobalTd.diners+=get_parent().valor
+	get_parent().queue_free()

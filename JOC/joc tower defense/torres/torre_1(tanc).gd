@@ -4,7 +4,7 @@ var enemics = []
 var target_actual=null
 var dispar = true
 var type = 1
-var valor = 5
+var valor = 3.75
 var ats=1
 func _ready():
 	$timer_dispar.start() 

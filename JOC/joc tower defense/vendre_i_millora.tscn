@@ -22,6 +22,7 @@ __meta__ = {
 }
 
 [node name="GridContainer" type="GridContainer" parent="."]
+visible = false
 margin_left = -11.0
 margin_top = 74.3334
 margin_right = 1017.0
