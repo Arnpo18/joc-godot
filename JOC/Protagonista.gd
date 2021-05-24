@@ -11,6 +11,7 @@ var salt = 600
 var segon_salt = 550
 
 func _ready():
+	position = Vector2(120, 800)
 	$AnimacioInicial.start()
 	$AnimatedSprite.play('Appearing')
 
@@ -52,7 +53,7 @@ func _physics_process(delta):
 		zona()
 	
 	if Input.is_action_just_pressed("ui_accept"):
-		mal()
+		position.x += 1920
 
 func anima(_velocitat):
 	if velocitat == Vector2.ZERO:
@@ -74,13 +75,14 @@ func mal():
 func zona():
 	if position.x > 0 and position.x < 1920:
 		$"/root/Global_Plataformes".mapa = 1
-	if position.x > 1920 and position.x < 3840:
+	if position.x > 1920 and position.x < 1920*2:
 		$"/root/Global_Plataformes".mapa = 2
-	if position.x > 3840 and position.x < 5760:
+	if position.x > 1920*2 and position.x < 1920*3:
 		$"/root/Global_Plataformes".mapa = 3
-	if position.x > 5760 and position.x < 7680:
+	if position.x > 1920*3 and position.x < 1920*4:
 		$"/root/Global_Plataformes".mapa = 4
-
+	if position.x > 1920*4 and position.x < 1920*5:
+		$"/root/Global_Plataformes".mapa = 5
 
 func _on_Mort_body_entered(body):
 	if body.collision_layer == 2:

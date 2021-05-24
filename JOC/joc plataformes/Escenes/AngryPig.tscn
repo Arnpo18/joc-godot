@@ -227,13 +227,13 @@ animations = [ {
 extents = Vector2( 10.9094, 11.5483 )
 
 [sub_resource type="CapsuleShape2D" id=50]
-radius = 84.5833
+radius = 100.926
 height = 235.737
 
 [node name="AngryPig" type="KinematicBody2D"]
 scale = Vector2( 3, 3 )
 collision_layer = 2
-collision_mask = 4
+collision_mask = 6
 script = ExtResource( 6 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]

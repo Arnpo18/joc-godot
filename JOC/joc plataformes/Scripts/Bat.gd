@@ -22,6 +22,7 @@ func _physics_process(delta):
 			velocitat.y += moviment*delta*10
 		if target.position.y < position.y:
 			velocitat.y += -moviment*delta*10
+	
 	elif not is_on_ceiling():
 		velocitat.y = -100
 	else:

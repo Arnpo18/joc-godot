@@ -21,6 +21,7 @@ func _process(_delta):
 		elif $Protagonista.position.x == 120 + 1920*2:
 			$"/root/Global_Plataformes".Enemics_Zona3 = true
 		elif $Protagonista.position.x == 120 + 1920*3:
+			$Protagonista.position.y -= 300
 			$"/root/Global_Plataformes".Enemics_Zona4 = true
 		elif $Protagonista.position.x == 120 + 1920*4:
 			$"/root/Global_Plataformes".Enemics_Zona5 = true
