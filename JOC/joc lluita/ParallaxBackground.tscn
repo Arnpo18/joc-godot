@@ -9,7 +9,7 @@
 offset = Vector2( 0, -685 )
 scale = Vector2( 1.2, 1.2 )
 transform = Transform2D( 1.2, 0, 0, 1.2, 0, -685 )
-scroll_base_scale = Vector2( 1, 0 )
+scroll_base_scale = Vector2( 0.5, 0 )
 scroll_ignore_camera_zoom = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]

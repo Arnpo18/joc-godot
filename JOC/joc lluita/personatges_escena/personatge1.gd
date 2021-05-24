@@ -12,6 +12,7 @@ var objectiu
 var aa=false
 var aaa=false
 var nova_vida
+var segon_salt=true
 func x():
 	pass
 func _ready():
@@ -49,8 +50,13 @@ func _physics_process(delta):
 				$AnimatedSprite.play('camina')
 				$AnimatedSprite.scale.x=-1
 				$espasa.scale.x=-1
+			if is_on_floor():
+				segon_salt=true
 			if Input.is_action_just_pressed("salta_lluita") && is_on_floor():
 				moviment.y=-360
+			elif Input.is_action_just_pressed("salta_lluita") && segon_salt==true:
+				moviment.y=-360
+				segon_salt=false
 			if is_on_floor()==false && moviment.y <0:
 				$AnimatedSprite.play('salt')
 			if is_on_floor()==false && moviment.y >0:
@@ -96,3 +102,17 @@ func _on_espera_timeout():
 	gravetat=670 # Replace with function body.
 	aaa=false
 
+func normal():
+	$Timer.start()
+	$TextureProgress.rect_scale=Vector2(0.08,0.08)
+func velocitat():
+	velocitat=500
+	velocitat2=250
+	$Timer2.start()
+func _on_Timer_timeout():
+	scale=Vector2(1,1)
+	$TextureProgress.rect_scale=Vector2(0.15,0.15)
+
+func _on_Timer2_timeout():
+	velocitat=300
+	velocitat2=100

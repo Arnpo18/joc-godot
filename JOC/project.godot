@@ -16,6 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Joc"
+run/main_scene="res://MENU PRINCIPAL.tscn"
 config/icon="res://icon.png"
 
 [autoload]

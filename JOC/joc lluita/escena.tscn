@@ -108,7 +108,12 @@ texture = ExtResource( 8 )
 position = Vector2( 20, 80 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 8 )
+
+[node name="buff" type="Timer" parent="."]
+wait_time = 12.0
+autostart = true
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="timeout" from="Timer3" to="." method="_on_Timer3_timeout"]
+[connection signal="timeout" from="buff" to="." method="_on_buff_timeout"]

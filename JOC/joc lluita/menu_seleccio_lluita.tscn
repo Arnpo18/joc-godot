@@ -1,11 +1,13 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://joc lluita/hud/cavaller1.PNG" type="Texture" id=1]
 [ext_resource path="res://joc lluita/hud/j1.png" type="Texture" id=2]
 [ext_resource path="res://joc lluita/hud/cavaller2.PNG" type="Texture" id=3]
 [ext_resource path="res://joc lluita/hud/j2.png" type="Texture" id=4]
 [ext_resource path="res://joc lluita/hud/samurai.PNG" type="Texture" id=5]
+[ext_resource path="res://joc lluita/hud/question_mark_PNG74.png" type="Texture" id=6]
 [ext_resource path="res://joc lluita/hud/caçadora.PNG" type="Texture" id=7]
+[ext_resource path="res://transicio.tscn" type="PackedScene" id=8]
 [ext_resource path="res://joc lluita/hud/reina.PNG" type="Texture" id=9]
 [ext_resource path="res://joc lluita/hud/x_selec.png" type="Texture" id=11]
 [ext_resource path="res://joc lluita/hud/x.PNG" type="Texture" id=12]
@@ -24,28 +26,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Polygon2D2" type="Polygon2D" parent="."]
-position = Vector2( 8, -25 )
-color = Color( 0, 0, 0, 1 )
-polygon = PoolVector2Array( 128, 288, 544, 288, 544, 904, 336, 904, 128, 904, 128, 296, 136, 296, 136, 896, 536, 896, 536, 296, 128, 296 )
-
-[node name="Polygon2D3" type="Polygon2D" parent="."]
-position = Vector2( 729.966, -128 )
-scale = Vector2( 0.734638, 1 )
-color = Color( 0, 0, 0, 1 )
-polygon = PoolVector2Array( 128, 288, 544, 288, 544, 904, 336, 904, 128, 904, 128, 296, 136, 296, 136, 896, 536, 896, 536, 296, 128, 296 )
-
-[node name="Polygon2D" type="Polygon2D" parent="."]
-color = Color( 0, 0, 0, 1 )
-polygon = PoolVector2Array( 128, 288, 544, 288, 544, 904, 336, 904, 128, 904, 128, 296, 136, 296, 136, 896, 536, 896, 536, 296, 128, 296 )
-
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -24.0
 margin_right = 40.0
 margin_bottom = 16.0
-color = Color( 0.351746, 0.389948, 0.398438, 1 )
+color = Color( 0.352941, 0.388235, 0.4, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -63,6 +50,9 @@ margin_top = 227.661
 margin_right = 1614.27
 margin_bottom = 837.661
 color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 margin_left = 328.0
@@ -411,6 +401,19 @@ one_shot = true
 [node name="tj2" type="Timer" parent="."]
 wait_time = 0.3
 one_shot = true
+
+[node name="\?" type="TextureButton" parent="."]
+margin_left = 1800.0
+margin_top = 928.0
+margin_right = 2306.0
+margin_bottom = 1440.0
+rect_scale = Vector2( 0.25, 0.25 )
+texture_normal = ExtResource( 6 )
+
+[node name="ColorRect4" parent="." instance=ExtResource( 8 )]
+margin_top = -24.0
+margin_right = 56.0
+margin_bottom = 24.0
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/cavaller1" to="." method="_on_cavaller1_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/cavaller2" to="." method="_on_cavaller2_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/GridContainer/samurai" to="." method="_on_samurai_pressed"]
@@ -426,3 +429,4 @@ one_shot = true
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="timeout" from="tj1" to="." method="_on_tj1_timeout"]
 [connection signal="timeout" from="tj2" to="." method="_on_tj2_timeout"]
+[connection signal="pressed" from="?" to="." method="_on__pressed"]

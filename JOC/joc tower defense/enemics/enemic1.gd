@@ -37,5 +37,5 @@ func final2():
 	a.global_position=global_position
 	GlobalTd.bales.add_child(a)
 	a.play('default')
-	GlobalTd.vida-=50
+	GlobalTd.vida-=20
 	queue_free()

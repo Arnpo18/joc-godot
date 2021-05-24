@@ -1,6 +1,6 @@
 extends PathFollow2D
-var velocitat=60
-var vida = 50
+var velocitat=GlobalTd.v_tanc
+var vida = GlobalTd.vida_tanc
 var bum = preload("res://joc tower defense/bum.tscn")
 func _ready():
 	pass
@@ -26,7 +26,7 @@ func _on_Area2D_area_entered(area):
 		vida -= 1
 		area.queue_free()
 	if area.is_in_group('míssil'):
-		vida -= 3
+		vida -= 5
 		var a = bum.instance()
 		a.global_position=area.global_position
 		GlobalTd.bales.add_child(a)
