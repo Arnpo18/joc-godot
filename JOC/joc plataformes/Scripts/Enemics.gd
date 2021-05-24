@@ -50,3 +50,23 @@ func _process(_delta):
 		$Bat.position = Vector2(900 + 1920*3, 191)
 		
 		$"/root/Global_Plataformes".Enemics_Zona4 = false
+		
+		
+	if $"/root/Global_Plataformes".Enemics_Zona5 == true:
+		for child in get_children():
+			remove_child(child)
+		
+		add_child(AngryPig.instance())
+		add_child(AngryPig.instance())
+		
+		for child in get_children():
+			child.position = Vector2(8320, 830)
+		$AngryPig.position = Vector2(8960, 830)
+		
+		$"/root/Global_Plataformes".Enemics_Zona5 = false
+		
+		
+	if $"/root/Global_Plataformes".final_ene == true:
+		for child in get_children():
+			remove_child(child)
+		$"/root/Global_Plataformes".final_ene = false

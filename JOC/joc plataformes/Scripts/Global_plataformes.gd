@@ -10,3 +10,6 @@ var Enemics_Zona4 = false
 var Enemics_Zona5 = false
 
 var respawn = false
+
+var final_prota = false
+var final_ene = false

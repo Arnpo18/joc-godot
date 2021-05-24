@@ -8,7 +8,7 @@ var mov_dreta = false
 var mov_esq = true
 var quiet_1 = false
 var quiet_2 = false
-var moviment = 110
+var moviment = 105
 var cam_enfadat = false
 
 func _ready():

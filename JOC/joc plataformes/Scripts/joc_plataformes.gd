@@ -7,6 +7,7 @@ func _ready():
 
 
 func _process(_delta):
+#	print($"/root/Global_Plataformes".respawn)
 	if $"/root/Global_Plataformes".respawn == true:
 		
 		remove_child($Protagonista)
@@ -24,6 +25,13 @@ func _process(_delta):
 			$Protagonista.position.y -= 300
 			$"/root/Global_Plataformes".Enemics_Zona4 = true
 		elif $Protagonista.position.x == 120 + 1920*4:
+			$Protagonista.position.y -= 100
 			$"/root/Global_Plataformes".Enemics_Zona5 = true
 		
 		$"/root/Global_Plataformes".respawn = false
+		
+		
+	if $"/root/Global_Plataformes".final_prota == true:
+		remove_child($Protagonista)
+		$"You Win".visible = true
+		$"/root/Global_Plataformes".final_prota = false
