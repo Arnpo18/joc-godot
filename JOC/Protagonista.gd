@@ -19,7 +19,6 @@ func _ready():
 #	print(collision_mask)
 
 func _physics_process(delta):
-	print(position.x)
 	if position.x > 1920*5:
 		$"/root/Global_Plataformes".final_ene = true
 		$"/root/Global_Plataformes".final_prota = true
@@ -57,8 +56,6 @@ func _physics_process(delta):
 		anima(velocitat)
 		zona()
 	
-	if Input.is_action_just_pressed("ui_accept"):
-		position.x += 1920
 
 func anima(_velocitat):
 	if velocitat == Vector2.ZERO:

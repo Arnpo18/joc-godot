@@ -7,7 +7,6 @@ func _ready():
 
 
 func _process(_delta):
-#	print($"/root/Global_Plataformes".respawn)
 	if $"/root/Global_Plataformes".respawn == true:
 		
 		remove_child($Protagonista)
