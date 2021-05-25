@@ -37,4 +37,5 @@ margin_bottom = -22.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]

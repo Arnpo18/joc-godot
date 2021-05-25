@@ -1,12 +1,6 @@
 extends Control
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	$MarginContainer/CenterContainer/VBoxContainer/TextureButton.grab_focus()  # Replace with function body.
 func _physics_process(delta):
@@ -24,8 +18,10 @@ func _input(event):
 
 func _on_TextureButton_pressed():
 	get_tree().paused = not get_tree().paused
-	visible = not visible # Replace with function body.
+	visible = not visible 
 
 
 func _on_TextureButton2_pressed():
-	get_tree().change_scene("res://MENU PRINCIPAL.tscn") # Replace with function body.
+	get_tree().change_scene("res://MENU PRINCIPAL.tscn") 
+	get_tree().paused = not get_tree().paused
+	visible = not visible 

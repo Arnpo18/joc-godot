@@ -1,18 +1,16 @@
 extends Node
-const e1 = preload("res://joc tower defense/enemics/enemic_1.tscn")
-const e2 = preload("res://joc tower defense/enemics/enemic_2.tscn")
-const t1 = preload("res://joc tower defense/enemics/tanc_enemic_1.tscn")
-const t2 = preload("res://joc tower defense/enemics/tanc_enemic_2.tscn")
-const a1 = preload("res://joc tower defense/enemics/avio_enemic_1.tscn")
-const a2 = preload("res://joc tower defense/enemics/avio_enemic_2.tscn")
+const en1 = preload("res://joc tower defense/enemics/enemic_1.tscn")
+const en2 = preload("res://joc tower defense/enemics/enemic_2.tscn")
+const ta1 = preload("res://joc tower defense/enemics/tanc_enemic_1.tscn")
+const ta2 = preload("res://joc tower defense/enemics/tanc_enemic_2.tscn")
+const av1 = preload("res://joc tower defense/enemics/avio_enemic_1.tscn")
+const av2 = preload("res://joc tower defense/enemics/avio_enemic_2.tscn")
 const b = preload("res://joc tower defense/TextureButton.tscn")
 var enemic = true
 var ronda=1
 var n=0
 var r=1
 var ran
-var segons=0
-var minuts=0
 func _ready():
 	$ronda_1.start()	
 func boto(x):
@@ -22,10 +20,11 @@ func boto(x):
 func _process(delta):
 	if GlobalTd.vida<=0:
 		$menu_pausa2.show()
-	$Label2.text= str(minuts) +":"+ str(segons)
-	$Label.text = str(GlobalTd.diners)+('$')
+		$menu_pausa.queue_free()
+	$diners.text=str(GlobalTd.diners)+"$"
 	$ronda.text="Ronda:"+ str(r)
 	$vida.text=str(GlobalTd.vida)
+	$puntuacio.text="puntuació:\n"+str(GlobalTd.puntuacio)
 	if ronda==1:
 		ronda==0
 	if ronda==2 and $Path2D.get_child_count()==0:
@@ -63,22 +62,22 @@ func _process(delta):
 		r=7
 		n=0
 func e1():
-	var a = e1.instance()
+	var a = en1.instance()
 	$Path2D.add_child(a)
 func e2():
-	var a = e2.instance()
+	var a = en2.instance()
 	$Path2D.add_child(a)
 func t1():
-	var a = t1.instance()
+	var a = ta1.instance()
 	$Path2D.add_child(a)
 func t2():
-	var a = t2.instance()
+	var a = ta2.instance()
 	$Path2D.add_child(a)
 func a1():
-	var a = a1.instance()
+	var a = av1.instance()
 	$Path2D.add_child(a)
 func a2():
-	var a = a2.instance()
+	var a = av2.instance()
 	$Path2D.add_child(a)
 func _on_ronda_1_timeout():
 	e1()
@@ -333,9 +332,3 @@ func ronda_7():
 func _on_ronda_7_timeout():
 	ronda_7()
 
-func _on_Timer_timeout():
-	segons+=1
-	if segons==60:
-		segons=0
-		minuts+=1
-	

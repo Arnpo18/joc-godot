@@ -10,7 +10,6 @@ config_version=4
 
 _global_script_classes=[  ]
 _global_script_class_icons={
-
 }
 
 [application]
@@ -21,6 +20,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
+Global_Plataformes="*res://joc plataformes/Scripts/Global_plataformes.gd"
 GlobalLluita="*res://joc lluita/global_lluita.gd"
 GlobalTd="*res://joc tower defense/global_td.gd"
 
@@ -28,16 +28,9 @@ GlobalTd="*res://joc tower defense/global_td.gd"
 
 window/size/width=1920
 window/size/height=1080
-window/size/resizable=false
 window/size/fullscreen=true
-window/size/test_width=1920
-window/size/test_height=1080
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
-
-[global]
-
-snap=false
 
 [input]
 
@@ -111,13 +104,24 @@ atac2_lluita2={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":85,"unicode":0,"echo":false,"script":null)
  ]
 }
-esc={
+dreta_plataformes={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777217,"unicode":0,"echo":false,"script":null)
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"unicode":0,"echo":false,"script":null)
+ ]
+}
+esquerra_plataformes={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"unicode":0,"echo":false,"script":null)
+ ]
+}
+salta_plataformes={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"unicode":0,"echo":false,"script":null)
  ]
 }
 
 [rendering]
 
-quality/2d/use_pixel_snap=true
+2d/snapping/use_gpu_pixel_snap=true
 environment/default_environment="res://default_env.tres"
+quality/2d/use_pixel_snap=true

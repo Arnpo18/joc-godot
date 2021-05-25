@@ -396,29 +396,36 @@ polygon = PoolVector2Array( 770.663, 562.049, 1096.5, 556, 1185, 621, 1481.46, 6
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -160.263, 342.574 )
 shape = SubResource( 3 )
+one_way_collision = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2( -95.7563, 503.505 )
 shape = SubResource( 3 )
+one_way_collision = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
 position = Vector2( 31.5123, 405.342 )
 shape = SubResource( 3 )
+one_way_collision = true
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
 position = Vector2( 192.125, 311.426 )
 shape = SubResource( 3 )
+one_way_collision = true
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
 position = Vector2( 1663.28, 501.941 )
 shape = SubResource( 3 )
+one_way_collision = true
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="."]
 position = Vector2( 1824.73, 599.906 )
 shape = SubResource( 3 )
+one_way_collision = true
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="."]
 position = Vector2( 1823.17, 406.107 )
 shape = SubResource( 3 )
+one_way_collision = true
 
 [node name="ParallaxBackground" parent="." instance=ExtResource( 4 )]

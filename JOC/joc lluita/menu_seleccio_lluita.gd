@@ -3,8 +3,7 @@ var j1=false
 var j2=false
 func _ready():
 	$ColorRect4.a()
-func _process(delta):
- pass
+	$Button.disabled=false
 func _on_cavaller1_pressed():
 	j1=true
 	GlobalLluita.personatge1=0

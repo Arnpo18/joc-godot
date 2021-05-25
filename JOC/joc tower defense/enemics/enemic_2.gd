@@ -20,7 +20,7 @@ func final():
 	GlobalTd.bales.add_child(b)
 	queue_free()
 	GlobalTd.diners+=4
-
+	GlobalTd.puntuacio+=10
 func _on_Area2D_area_entered(area):
 	if area.is_in_group('bala'):
 		vida -= 1

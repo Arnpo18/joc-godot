@@ -19,7 +19,8 @@ func _process(delta):
 	if enemics.has(target_actual)==false:
 		enemic_proper()
 	elif target_actual:
-		pass
+		if target_actual.vida<=1:
+			target_actual.last=true
 	elif !target_actual:
 		enemic_proper()
 	if target_actual:

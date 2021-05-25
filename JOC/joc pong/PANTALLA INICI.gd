@@ -20,6 +20,6 @@ func _on_TextureButton_pressed():
 func _on_TextureButton2_pressed():
 	get_tree().change_scene("res://joc pong/PONG2J.tscn")
 func _on_TextureButton3_pressed():
-	get_tree().quit() 
+	get_tree().change_scene("res://MENU PRINCIPAL.tscn")
 func _on_TextureButton4_pressed():
 	get_tree().change_scene("res://joc pong/Controls.tscn")

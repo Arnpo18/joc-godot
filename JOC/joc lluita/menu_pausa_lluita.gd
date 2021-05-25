@@ -22,3 +22,5 @@ func _on_TextureButton_pressed():
 
 func _on_TextureButton2_pressed():
 	get_tree().change_scene("res://MENU PRINCIPAL.tscn")
+	get_tree().paused = not get_tree().paused
+	visible = not visible # Replace with function body.
