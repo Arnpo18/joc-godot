@@ -1,0 +1,51 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://space_shooter/Sound/music.ogg" type="AudioStream" id=1]
+[ext_resource path="res://space_shooter/Sound/explosion.wav" type="AudioStream" id=2]
+[ext_resource path="res://space_shooter/Scripts/Audio/LaserShip.gd" type="Script" id=3]
+[ext_resource path="res://space_shooter/Sound/laser_ship.wav" type="AudioStream" id=4]
+[ext_resource path="res://space_shooter/Sound/powerup.wav" type="AudioStream" id=5]
+[ext_resource path="res://space_shooter/Sound/laser_enemy.wav" type="AudioStream" id=6]
+[ext_resource path="res://space_shooter/Sound/hit_ship.wav" type="AudioStream" id=7]
+[ext_resource path="res://space_shooter/Scripts/Audio/Explosion.gd" type="Script" id=9]
+[ext_resource path="res://space_shooter/Scripts/Audio/LaserEnemy.gd" type="Script" id=10]
+[ext_resource path="res://space_shooter/Scripts/Audio/PowerUp.gd" type="Script" id=11]
+[ext_resource path="res://space_shooter/Scripts/Audio/EnemyHit.gd" type="Script" id=12]
+[ext_resource path="res://space_shooter/Scripts/Audio/ShipHit.gd" type="Script" id=13]
+
+[node name="Audio" type="Node"]
+
+[node name="LaserShip" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -10.0
+script = ExtResource( 3 )
+
+[node name="LaserEnemy" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -10.0
+script = ExtResource( 10 )
+
+[node name="Explosion" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -12.5
+script = ExtResource( 9 )
+
+[node name="EnemyHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -10.0
+script = ExtResource( 12 )
+
+[node name="ShipHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -10.0
+script = ExtResource( 13 )
+
+[node name="PowerUp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -10.0
+script = ExtResource( 11 )
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -15.0
+autoplay = true

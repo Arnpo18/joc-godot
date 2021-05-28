@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://joc tower defense/assets/Tilesheet/towerDefense_tilesheet.png" type="Texture" id=1]
+[ext_resource path="res://joc tower defense/enemics/enemic_2.gd" type="Script" id=2]
+[ext_resource path="res://joc tower defense/enemics/vida_enemics.tscn" type="PackedScene" id=3]
+[ext_resource path="res://joc tower defense/sons/tocat.tscn" type="PackedScene" id=4]
+[ext_resource path="res://joc tower defense/sons/explosio.tscn" type="PackedScene" id=5]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 26.7673
+
+[node name="enemic_1" type="PathFollow2D" groups=[
+"enemic",
+]]
+scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1152, 640, 64, 64 )
+
+[node name="Label" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureProgress" parent="." instance=ExtResource( 3 )]
+margin_left = -21.3333
+margin_top = -42.6667
+margin_right = 108.667
+margin_bottom = 102.333
+
+[node name="tocat" parent="." instance=ExtResource( 4 )]
+
+[node name="explosio" parent="." instance=ExtResource( 5 )]
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]

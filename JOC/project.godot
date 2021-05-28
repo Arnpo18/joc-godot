@@ -18,6 +18,20 @@ _global_script_class_icons={
 config/name="Joc"
 config/icon="res://icon.png"
 
+<<<<<<< Updated upstream
+=======
+[autoload]
+
+Global_Plataformes="*res://joc plataformes/Scripts/Global_plataformes.gd"
+GlobalLluita="*res://joc lluita/global_lluita.gd"
+GlobalTd="*res://joc tower defense/global_td.gd"
+Global="*res://space_shooter/Global.gd"
+Game="*res://space_shooter/Game.gd"
+Audio="*res://space_shooter/Scenes/Audio.tscn"
+Utils="*res://space_shooter/Scripts/utils.gd"
+BestscoreSpr="*res://space_shooter/Scripts/bestscore_spr.gd"
+
+>>>>>>> Stashed changes
 [display]
 
 window/size/width=1920

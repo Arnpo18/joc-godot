@@ -1,0 +1,67 @@
+[gd_scene load_steps=35 format=2]
+
+[ext_resource path="res://space_shooter/Sprites/Enemy/enemy_kamikaze.png" type="Texture" id=1]
+[ext_resource path="res://space_shooter/Scripts/Enemy.gd" type="Script" id=2]
+[ext_resource path="res://space_shooter/Sprites/Explosion/img_24.png" type="Texture" id=3]
+[ext_resource path="res://space_shooter/Sprites/Explosion/img_11.png" type="Texture" id=4]
+[ext_resource path="res://space_shooter/Sprites/Explosion/img_17.png" type="Texture" id=5]
+[ext_resource path="res://space_shooter/Sprites/Explosion/img_1.png" type="Texture" id=6]
+[ext_resource path="res://space_shooter/Sprites/Explosion/img_27.png" type="Texture" id=7]
+[ext_resource path="res://space_shooter/Sprites/Explosion/img_2.png" type="Texture" id=8]
+[ext_resource path="res://space_shooter/Sprites/Explosion/img_21.png" type="Texture" id=9]
+[ext_resource path="res://space_shooter/Sprites/Explosion/img_5.png" type="Texture" id=10]
+[ext_resource path="res://space_shooter/Sprites/Explosion/img_26.png" type="Texture" id=11]
+[ext_resource path="res://space_shooter/Sprites/Explosion/img_9.png" type="Texture" id=12]
+[ext_resource path="res://space_shooter/Sprites/Explosion/img_8.png" type="Texture" id=13]
+[ext_resource path="res://space_shooter/Sprites/Explosion/img_3.png" type="Texture" id=14]
+[ext_resource path="res://space_shooter/Sprites/Explosion/img_0.png" type="Texture" id=15]
+[ext_resource path="res://space_shooter/Sprites/Explosion/img_15.png" type="Texture" id=16]
+[ext_resource path="res://space_shooter/Sprites/Explosion/img_13.png" type="Texture" id=17]
+[ext_resource path="res://space_shooter/Sprites/Explosion/img_6.png" type="Texture" id=18]
+[ext_resource path="res://space_shooter/Sprites/Explosion/img_23.png" type="Texture" id=19]
+[ext_resource path="res://space_shooter/Sprites/Explosion/img_4.png" type="Texture" id=20]
+[ext_resource path="res://space_shooter/Sprites/Explosion/img_7.png" type="Texture" id=21]
+[ext_resource path="res://space_shooter/Sprites/Explosion/img_16.png" type="Texture" id=22]
+[ext_resource path="res://space_shooter/Sprites/Explosion/img_10.png" type="Texture" id=23]
+[ext_resource path="res://space_shooter/Sprites/Explosion/img_28.png" type="Texture" id=24]
+[ext_resource path="res://space_shooter/Sprites/Explosion/img_12.png" type="Texture" id=25]
+[ext_resource path="res://space_shooter/Sprites/Explosion/img_25.png" type="Texture" id=26]
+[ext_resource path="res://space_shooter/Sprites/Explosion/img_14.png" type="Texture" id=27]
+[ext_resource path="res://space_shooter/Sprites/Explosion/img_22.png" type="Texture" id=28]
+[ext_resource path="res://space_shooter/Sprites/Explosion/img_20.png" type="Texture" id=29]
+[ext_resource path="res://space_shooter/Sprites/Explosion/img_29.png" type="Texture" id=30]
+[ext_resource path="res://space_shooter/Sprites/Explosion/img_18.png" type="Texture" id=31]
+[ext_resource path="res://space_shooter/Sprites/Explosion/img_19.png" type="Texture" id=32]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "NoExplosioxd",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 14 ), ExtResource( 20 ), ExtResource( 10 ), ExtResource( 18 ), ExtResource( 21 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 23 ), ExtResource( 4 ), ExtResource( 25 ), ExtResource( 17 ), ExtResource( 27 ), ExtResource( 16 ), ExtResource( 22 ), ExtResource( 5 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 29 ), ExtResource( 9 ), ExtResource( 28 ), ExtResource( 19 ), ExtResource( 3 ), ExtResource( 26 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 24 ), ExtResource( 30 ) ],
+"loop": true,
+"name": "Explosioxd",
+"speed": 40.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 17, 20 )
+
+[node name="Kamikaze" type="Area2D"]
+script = ExtResource( 2 )
+Armor = 4
+vel = Vector2( 0, 350 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 1.5, 1.5 )
+frames = SubResource( 1 )
+animation = "NoExplosioxd"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 3 )
+shape = SubResource( 2 )
+[connection signal="body_entered" from="." to="." method="_on_Kamikaze_body_entered"]
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

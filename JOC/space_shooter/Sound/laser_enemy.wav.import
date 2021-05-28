@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/laser_enemy.wav-924ad62e82a18560458bd5d27ca1e634.sample"
+
+[deps]
+
+source_file="res://space_shooter/Sound/laser_enemy.wav"
+dest_files=[ "res://.import/laser_enemy.wav-924ad62e82a18560458bd5d27ca1e634.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,133 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://MENU PRINCIPAL.gd" type="Script" id=1]
+[ext_resource path="res://joc pong/HUD/BAUHS93.TTF" type="DynamicFontData" id=2]
+[ext_resource path="res://menu_assets/Base Profile Screenshot 2021.05.27 - 16.30.03.51.png" type="Texture" id=3]
+[ext_resource path="res://menu_assets/pong.png" type="Texture" id=4]
+[ext_resource path="res://menu_assets/Td.png" type="Texture" id=5]
+[ext_resource path="res://menu_assets/paltformer.png" type="Texture" id=6]
+[ext_resource path="res://menu_assets/2112021.jpg" type="Texture" id=7]
+[ext_resource path="res://menu_assets/Base Profile Screenshot 2021.05.28 - 20.17.51.06.png" type="Texture" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 100
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 100
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 100
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 100
+font_data = ExtResource( 2 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.152941, 0.141176, 0.141176, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="."]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -1800.0
+margin_top = -404.0
+margin_right = 1769.0
+margin_bottom = 3374.0
+rect_scale = Vector2( 0.2, 0.2 )
+rect_pivot_offset = Vector2( 2760, 40 )
+custom_constants/vseparation = 200
+custom_constants/hseparation = 200
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="joc_lluita" type="Button" parent="GridContainer"]
+margin_right = 2650.0
+margin_bottom = 1086.0
+custom_fonts/font = SubResource( 1 )
+text = "JOC LLUITA"
+icon = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="td" type="Button" parent="GridContainer"]
+margin_left = 2850.0
+margin_right = 5489.0
+margin_bottom = 1086.0
+custom_fonts/font = SubResource( 2 )
+text = "TOWER DEFENSE"
+icon = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="platformer" type="Button" parent="GridContainer"]
+margin_top = 1286.0
+margin_right = 2650.0
+margin_bottom = 2372.0
+custom_fonts/font = SubResource( 3 )
+text = "PLATAFORMES"
+icon = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pong" type="Button" parent="GridContainer"]
+margin_left = 2850.0
+margin_top = 1286.0
+margin_right = 5489.0
+margin_bottom = 2372.0
+custom_fonts/font = SubResource( 4 )
+text = "PONG"
+icon = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="space_shooter" type="Button" parent="GridContainer"]
+margin_top = 2572.0
+margin_right = 2650.0
+margin_bottom = 3778.0
+custom_fonts/font = SubResource( 4 )
+text = "SPACE SHOOTER"
+icon = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="exit" type="Button" parent="GridContainer"]
+margin_left = 2850.0
+margin_top = 2572.0
+margin_right = 5489.0
+margin_bottom = 3778.0
+custom_fonts/font = SubResource( 4 )
+text = "SURT"
+icon = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="GridContainer/joc_lluita" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="GridContainer/td" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="GridContainer/platformer" to="." method="_on_Button4_pressed"]
+[connection signal="pressed" from="GridContainer/pong" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="GridContainer/space_shooter" to="." method="_on_space_shooter_pressed"]
+[connection signal="pressed" from="GridContainer/exit" to="." method="_on_exit_pressed"]

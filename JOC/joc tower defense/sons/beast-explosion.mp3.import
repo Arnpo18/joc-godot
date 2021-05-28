@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/beast-explosion.mp3-a9614664b2458c680d2170d06cc8caea.mp3str"
+
+[deps]
+
+source_file="res://joc tower defense/sons/beast-explosion.mp3"
+dest_files=[ "res://.import/beast-explosion.mp3-a9614664b2458c680d2170d06cc8caea.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

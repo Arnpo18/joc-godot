@@ -57,6 +57,29 @@ margin_bottom = 455.0
 size_flags_horizontal = 4
 texture_normal = ExtResource( 7 )
 texture_focused = ExtResource( 4 )
+<<<<<<< Updated upstream
 [connection signal="pressed" from="MarginContainer/VBoxContainer/TextureButton" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/TextureButton2" to="." method="_on_TextureButton2_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/TextureButton3" to="." method="_on_TextureButton3_pressed"]
+=======
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton4" type="TextureButton" parent="."]
+margin_left = -688.0
+margin_top = 712.0
+margin_right = 6.0
+margin_bottom = 799.0
+size_flags_horizontal = 4
+texture_normal = ExtResource( 9 )
+texture_focused = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="TextureButton2" to="." method="_on_TextureButton2_pressed"]
+[connection signal="pressed" from="TextureButton3" to="." method="_on_TextureButton3_pressed"]
+[connection signal="pressed" from="TextureButton4" to="." method="_on_TextureButton4_pressed"]
+>>>>>>> Stashed changes
